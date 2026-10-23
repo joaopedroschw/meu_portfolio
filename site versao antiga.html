@@ -1,0 +1,2427 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>João Pedro Schwingel Carada — Artista Multidisciplinar | Investigador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F9F9F8;
+      --surface: #F1F1EF;
+      --ink: #141413;
+      --ink-secondary: #52524E;
+      --ink-muted: #8A8A84;
+      --line: #DCDCD7;
+      --line-dark: #141413;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* SWISS EDITORIAL GRID & CONTAINERS */
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .rule-top {
+      border-top: 1px solid var(--line);
+    }
+
+    .rule-bottom {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .rule-heavy {
+      border-top: 1.5px solid var(--line-dark);
+    }
+
+    /* HEADER / NAVIGATION */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(249, 249, 248, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      height: 4.5rem;
+    }
+
+    .brand {
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand span {
+      color: var(--ink-muted);
+      font-weight: 300;
+      margin-left: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 0.25rem 0;
+      color: var(--ink-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-meta {
+      text-align: right;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 6rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .hero-title-wrap {
+      grid-column: 1 / 9;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-summary {
+      grid-column: 9 / 13;
+      font-size: 0.95rem;
+      color: var(--ink-secondary);
+      border-left: 1px solid var(--line);
+      padding-left: 1.5rem;
+    }
+
+    /* PILLARS (3 DOMAINS FROM WORDPRESS HOME) */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin-top: 4rem;
+    }
+
+    .pillar-card {
+      padding: 2rem;
+      border-right: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      cursor: pointer;
+      transition: background-color 0.25s ease;
+    }
+
+    .pillar-card:last-child {
+      border-right: none;
+    }
+
+    .pillar-card:hover {
+      background-color: var(--surface);
+    }
+
+    .pillar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .pillar-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+
+    .pillar-title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 500;
+    }
+
+    .pillar-img-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: linear-gradient(135deg, #e4e4e0 0%, #c8c8c2 100%);
+      position: relative;
+    }
+
+    .pillar-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.04) brightness(0.96);
+      transition: filter 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pillar-card:hover .pillar-img-wrap img {
+      filter: grayscale(0%) contrast(1) brightness(1);
+      transform: scale(1.03);
+    }
+
+    /* SECTION HEADERS */
+    .section-head {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+      padding: 4rem 0 2rem;
+      align-items: baseline;
+    }
+
+    .section-index {
+      grid-column: 1 / 3;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-title {
+      grid-column: 3 / 8;
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .filter-bar {
+      grid-column: 8 / 13;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: flex-end;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 0.4rem 0.85rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+
+    /* PORTFOLIO GRID (13 EXACT PROJECTS FROM WORDPRESS) */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .project-card {
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+      cursor: pointer;
+      background: var(--bg);
+      transition: background-color 0.25s ease;
+      position: relative;
+    }
+
+    .project-card:hover {
+      background-color: var(--surface);
+    }
+
+    .card-meta-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-construction {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid var(--ink-muted);
+      color: var(--ink-secondary);
+      background: rgba(249, 249, 248, 0.9);
+    }
+
+    .thumb-wrapper {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: linear-gradient(145deg, #e6e6e2 0%, #cfcfca 50%, #b8b8b2 100%);
+      position: relative;
+    }
+
+    .thumb-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%) contrast(1.06) brightness(0.95);
+      transition: filter 0.45s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .project-card:hover .thumb-wrapper img {
+      filter: grayscale(0%) contrast(1) brightness(1);
+      transform: scale(1.03);
+    }
+
+    .thumb-overlay-notice {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      background: rgba(20, 20, 19, 0.82);
+      color: #F9F9F8;
+      padding: 0.25rem 0.6rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+
+    .card-subtitle {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-weight: 400;
+    }
+
+    .card-excerpt {
+      font-size: 0.86rem;
+      color: var(--ink-secondary);
+      line-height: 1.55;
+      margin-top: 0.4rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--line);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* VIDEO / YOUTUBE GALLERY SECTION */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .video-item {
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .video-frame-container {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #141413;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .video-frame-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .video-fallback-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      padding-top: 0.25rem;
+    }
+
+    .video-fallback-bar a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* BIOGRAPHY SECTION */
+    .bio-section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .bio-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .bio-portrait {
+      grid-column: 1 / 5;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: linear-gradient(145deg, #e2e2de, #c4c4be);
+      border: 1px solid var(--line);
+    }
+
+    .bio-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.05);
+      transition: filter 0.4s ease;
+    }
+
+    .bio-portrait:hover img {
+      filter: grayscale(0%) contrast(1);
+    }
+
+    .bio-content {
+      grid-column: 5 / 13;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .bio-lead {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      line-height: 1.3;
+      font-weight: 400;
+    }
+
+    .bio-text {
+      font-size: 1rem;
+      color: var(--ink-secondary);
+      line-height: 1.75;
+    }
+
+    .bio-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .btn-editorial {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border: 1px solid var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: all 0.2s ease;
+    }
+
+    .btn-editorial:hover {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    /* MODAL */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 20, 19, 0.72);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      display: none;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-y: auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-window {
+      background: var(--bg);
+      border: 1px solid var(--line-dark);
+      max-width: 1120px;
+      width: 100%;
+      padding: 3rem;
+      position: relative;
+      margin: auto 0;
+    }
+
+    .modal-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 2rem;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: 1px solid var(--ink);
+      padding: 0.45rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .modal-close:hover {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    .modal-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .modal-construction-banner {
+      background: var(--surface);
+      border-left: 3px solid var(--ink);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--ink-secondary);
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .modal-description p {
+      margin-bottom: 1.15rem;
+      color: var(--ink-secondary);
+      font-size: 0.98rem;
+      line-height: 1.75;
+    }
+
+    .modal-description ul {
+      margin: 0.5rem 0 1.25rem 1.25rem;
+      color: var(--ink-secondary);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .modal-credits {
+      background: var(--surface);
+      padding: 1.75rem;
+      border: 1px solid var(--line);
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: var(--ink-secondary);
+      align-self: start;
+    }
+
+    .modal-credits h4 {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .modal-videos {
+      margin-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .modal-gallery-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin-bottom: 1.25rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .modal-gallery figure {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .modal-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .modal-gallery figure:hover img {
+      transform: scale(1.04);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 3rem 0;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-title-wrap, .hero-summary {
+        grid-column: 1 / 13;
+      }
+      .hero-summary {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid var(--line);
+        padding-top: 1rem;
+      }
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.25rem;
+      }
+      .nav-bar {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 1rem 0;
+        gap: 0.75rem;
+      }
+      .nav-meta {
+        display: none;
+      }
+      .pillars,
+      .portfolio-grid,
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+      .pillar-card {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+      .section-index, .section-title, .filter-bar,
+      .bio-portrait, .bio-content {
+        grid-column: 1 / 13;
+      }
+      .filter-bar {
+        justify-content: flex-start;
+      }
+      .modal-window {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-bar">
+      <a href="#" class="brand">
+        João Pedro Schwingel Carada <span>Artista Multidisciplinar | Investigador</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#concertos-oboe">Oboé &amp; Concertos</a></li>
+        <li><a href="#biografia">Biografia</a></li>
+      </ul>
+      <div class="nav-meta">COIMBRA, PT</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-title-wrap">
+          <span class="eyebrow">Prática Artística &amp; Investigação em Arte Contemporânea</span>
+          <h1 class="hero-title">
+            Performance, investigação aliada à <em>prática artística</em> e projetos interdisciplinares.
+          </h1>
+        </div>
+        <div class="hero-summary">
+          <p>
+            Como artista e investigador, pesquiso como corpos, espaços e criações coletivas entrelaçam-se na expressão artística. Doutorando em Arte Contemporânea no Colégio das Artes da Universidade de Coimbra.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 DOMAINS FROM WORDPRESS HOME -->
+      <div class="pillars">
+        <div class="pillar-card" onclick="filterProjects('Artes Visuais')">
+          <div class="pillar-header">
+            <span class="pillar-num">01 / EIXO</span>
+            <h2 class="pillar-title">Artes Visuais</h2>
+          </div>
+          <div class="pillar-img-wrap">
+            <img src="img/artesvisuais.jpg" alt="Artes Visuais">
+          </div>
+        </div>
+
+        <div class="pillar-card" onclick="filterProjects('Performance')">
+          <div class="pillar-header">
+            <span class="pillar-num">02 / EIXO</span>
+            <h2 class="pillar-title">Performance</h2>
+          </div>
+          <div class="pillar-img-wrap">
+            <img src="img/performance.jpg">
+          </div>
+        </div>
+
+        <div class="pillar-card" onclick="filterProjects('Arte Comunitária')">
+          <div class="pillar-header">
+            <span class="pillar-num">03 / EIXO</span>
+            <h2 class="pillar-title">Arte Comunitária</h2>
+          </div>
+          <div class="pillar-img-wrap">
+            <img src="img/artecomunitaria.jpg" alt="Arte Comunitária">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION (13 ITEMS MATCHING WORDPRESS) -->
+    <section id="portfolio">
+      <div class="section-head">
+        <div class="section-index">01 / Catálogo de Obras</div>
+        <h2 class="section-title">Portfólio</h2>
+        <div class="filter-bar" id="filterBar">
+          <button class="filter-btn active" data-filter="all" onclick="filterProjects('all')">Todos (19)</button>
+          <button class="filter-btn" data-filter="Performance" onclick="filterProjects('Performance')">Performance &amp; Teatro</button>
+          <button class="filter-btn" data-filter="Artes Visuais" onclick="filterProjects('Artes Visuais')">Artes Visuais &amp; Instalação</button>
+          <button class="filter-btn" data-filter="Arte Comunitária" onclick="filterProjects('Arte Comunitária')">Arte Comunitária</button>
+          <button class="filter-btn" data-filter="Música" onclick="filterProjects('Música')">Música &amp; Oboé</button>
+        </div>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid"></div>
+    </section>
+
+    <!-- OBOÉ & CONCERTOS (DEDICATED AUDIOVISUAL SECTION) -->
+    <section id="concertos-oboe">
+      <div class="section-head rule-top" style="margin-top: 5rem;">
+        <div class="section-index">02 / Registos Musicais</div>
+        <h2 class="section-title">Oboé &amp; Concertos</h2>
+      </div>
+      <div class="video-grid" id="oboeVideoGrid"></div>
+    </section>
+
+   <!-- BIOGRAPHY SECTION -->
+    <section id="biografia" class="bio-section" style="margin-top: 5rem;">
+      <style>
+        .cv-section-wrap {
+          margin-top: 2.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 2.25rem;
+        }
+        .cv-block-title {
+          font-family: var(--font-mono);
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--ink);
+          padding-bottom: 0.65rem;
+          border-bottom: 1.5px solid var(--ink);
+          margin-bottom: 0.25rem;
+        }
+        .cv-row {
+          display: grid;
+          grid-template-columns: 150px 1fr;
+          gap: 1.5rem;
+          padding: 0.9rem 0;
+          border-bottom: 1px solid var(--line);
+          align-items: baseline;
+        }
+        .cv-year {
+          font-family: var(--font-mono);
+          font-size: 0.75rem;
+          color: var(--ink-muted);
+        }
+        .cv-details strong {
+          display: block;
+          font-weight: 500;
+          color: var(--ink);
+          font-size: 0.95rem;
+          margin-bottom: 0.15rem;
+        }
+        .cv-details span {
+          font-size: 0.85rem;
+          color: var(--ink-secondary);
+        }
+        /* GRELHA DE LINKS ESTILO 1ª VERSÃO SWISS EDITORIAL */
+        .social-links-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          border-top: 1px solid var(--ink);
+          border-left: 1px solid var(--line);
+          margin-top: 2rem;
+        }
+        .social-cell {
+          border-right: 1px solid var(--line);
+          border-bottom: 1px solid var(--line);
+          padding: 1.15rem 1.25rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 0.5rem;
+          background: var(--bg);
+          transition: all 0.2s ease;
+        }
+        .social-cell:hover {
+          background: var(--ink);
+          color: var(--bg);
+        }
+        .social-cell-label {
+          font-family: var(--font-mono);
+          font-size: 0.68rem;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: var(--ink-muted);
+          transition: color 0.2s ease;
+        }
+        .social-cell:hover .social-cell-label {
+          color: #b8b8b2;
+        }
+        .social-cell-name {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-family: var(--font-serif);
+          font-size: 1.25rem;
+          font-weight: 500;
+        }
+        @media (max-width: 900px) {
+          .social-links-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 768px) {
+          .cv-row {
+            grid-template-columns: 1fr;
+            gap: 0.25rem;
+          }
+          .social-links-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+
+      <div class="section-head" style="padding-top: 0;">
+        <div class="section-index">03 / Perfil &amp; Percurso</div>
+        <h2 class="section-title">Biografia &amp; Trajetória</h2>
+      </div>
+
+      <div class="bio-grid">
+        <div class="bio-portrait">
+          <img src="img/imagem-whatsapp-2025-05-31-as-14.51.30_c663a35e.jpg" alt="João Pedro Schwingel Carada">
+        </div>
+
+        <div class="bio-content">
+          <h3 class="bio-lead">
+            Como artista e investigador, pesquiso como corpos, espaços e criações coletivas entrelaçam-se na expressão artística.
+          </h3>
+          <p class="bio-text">
+            Meu nome é João Pedro Schwingel Carada, sou artista brasileiro e atualmente doutorando em Arte Contemporânea no Colégio das Artes da Universidade de Coimbra, Portugal. Minha investigação explora agenciamento e estado de presença em performances coletivas. Embora eu tenha me especializado no oboé, toquei diversos instrumentos — do saxofone e clarinete a instrumentos tradicionais da Capoeira (que pratiquei durante seis anos) —, aprofundando minha conexão com sons de diferentes culturas.
+          </p>
+          <p class="bio-text">
+            No centro do meu trabalho está a crença na arte como força comunitária. Seja através da música, do teatro ou da performance, busco criar espaços onde as pessoas possam colaborar, experimentar e expressar-se livremente. Nos últimos anos, imergi no teatro, na gestão cultural e na criação interdisciplinar no Teatro dos Estudantes da Universidade de Coimbra (TEUC).
+          </p>
+
+          <!-- TRAJETÓRIA / CRONOLOGIA (SEM O CURSO DE ELETRÓNICA) -->
+          <div class="cv-section-wrap">
+            <div class="cv-block">
+              <div class="cv-block-title">Formação Académica</div>
+              <div class="cv-row">
+                <div class="cv-year">2023 — Presente</div>
+                <div class="cv-details">
+                  <strong>Doutoramento em Arte Contemporânea</strong>
+                  <span>Colégio das Artes · Universidade de Coimbra, Portugal</span>
+                </div>
+              </div>
+              <div class="cv-row">
+                <div class="cv-year">2021 — 2023</div>
+                <div class="cv-details">
+                  <strong>Mestrado em Música (Performance — Oboé)</strong>
+                  <span>Departamento de Comunicação e Arte · Universidade de Aveiro, Portugal</span>
+                </div>
+              </div>
+              <div class="cv-row">
+                <div class="cv-year">2018 — 2021</div>
+                <div class="cv-details">
+                  <strong>Licenciatura em Música (Oboé)</strong>
+                  <span>Escola de Artes · Universidade de Évora, Portugal</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cv-block">
+              <div class="cv-block-title">Percurso Artístico, Institucional &amp; Profissional</div>
+              <div class="cv-row">
+                <div class="cv-year">2026 — Presente</div>
+                <div class="cv-details">
+                  <strong>Presidente da Direção &amp; Órgãos Sociais</strong>
+                  <span>Teatro dos Estudantes da Universidade de Coimbra (TEUC) — Gestão cultural, direção artística e coordenação institucional (Presidente da Mesa da Assembleia Geral em 2025)</span>
+                </div>
+              </div>
+              <div class="cv-row">
+                <div class="cv-year">2024 — Presente</div>
+                <div class="cv-details">
+                  <strong>Intérprete, Criador &amp; Sonoplasta</strong>
+                  <span>Colaborações teatrais e performativas com TEUC, O Teatrão, Associação Cultural Thíasos, Casa da Esquina e Anozero Ágora</span>
+                </div>
+              </div>
+              <div class="cv-row">
+                <div class="cv-year">2022 — 2023</div>
+                <div class="cv-details">
+                  <strong>Coordenação de Arte Comunitária &amp; Docência Musical</strong>
+                  <span>Orquestra Sem Fronteiras (Projeto “De Onde Vem?”) e ensino artístico especializado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCO DE LINKS EM GRELHA DA 1ª VERSÃO (CV, LINKEDIN, INSTAGRAM, YOUTUBE) -->
+          <div class="social-links-grid">
+            <a href="CVPortfolio.html" target="_blank" rel="noopener" class="social-cell">
+              <span class="social-cell-label">01 / Documento</span>
+              <span class="social-cell-name">Currículo (PDF) <span>↗</span></span>
+            </a>
+            <a href="https://www.linkedin.com/in/joaopedrocarada/" target="_blank" rel="noopener" class="social-cell">
+              <span class="social-cell-label">02 / Rede Profissional</span>
+              <span class="social-cell-name">LinkedIn <span>↗</span></span>
+            </a>
+            <a href="https://instagram.com/jpedruca" target="_blank" rel="noopener" class="social-cell">
+              <span class="social-cell-label">03 / Registo Visual</span>
+              <span class="social-cell-name">Instagram <span>↗</span></span>
+            </a>
+            <a href="https://www.youtube.com/channel/UCED5YYKgmBOL1r8QNNgjcig" target="_blank" rel="noopener" class="social-cell">
+              <span class="social-cell-label">04 / Canal de Vídeo</span>
+              <span class="social-cell-name">YouTube <span>↗</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- PROJECT DETAIL MODAL -->
+  <div class="modal-backdrop" id="projectModal" onclick="handleBackdropClick(event)">
+    <div class="modal-window">
+      <div class="modal-top-bar">
+        <span class="eyebrow" id="modalCategory" style="margin-bottom: 0;">Categoria</span>
+        <button class="modal-close" onclick="closeModal()">Fechar [ESC]</button>
+      </div>
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Título do Projeto</h2>
+        <div class="modal-subtitle" id="modalSubtitle">Subtítulo</div>
+      </div>
+      <div id="modalConstructionNotice" class="modal-construction-banner" style="display: none;">
+        [EM CONSTRUÇÃO] — A documentação completa, ficha técnica e registos visuais adicionais deste projeto encontram-se em fase de recolha e catalogação para atualização futura.
+      </div>
+      <div class="modal-grid">
+        <div class="modal-description" id="modalDescription"></div>
+        <div class="modal-credits" id="modalCredits"></div>
+      </div>
+      <div class="modal-videos" id="modalVideos"></div>
+      <div id="modalGallerySection">
+        <div class="modal-gallery-title">Registos Fotográficos &amp; Documentação</div>
+        <div class="modal-gallery" id="modalGallery"></div>
+      </div>
+    </div>
+  </div>
+
+<!-- LIGHTBOX PARA FOTOS AMPLIADAS -->
+  <div id="imageLightbox" onclick="closeLightbox(event)" style="display: none; position: fixed; inset: 0; background: rgba(10, 10, 10, 0.94); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center; padding: 2rem; cursor: zoom-out;">
+    <button onclick="closeLightbox(event)" style="position: absolute; top: 1.5rem; right: 2rem; background: transparent; border: 1px solid rgba(255,255,255,0.4); color: #fff; padding: 0.5rem 1rem; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer;">Fechar [ESC]</button>
+    <img id="lightboxImg" src="" alt="Ampliação" style="max-width: 90vw; max-height: 88vh; object-fit: contain; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 20px 40px rgba(0,0,0,0.6); cursor: default;" onclick="event.stopPropagation()">
+  </div>
+
+  <style>
+    .modal-gallery figure {
+      cursor: zoom-in;
+      position: relative;
+    }
+    .modal-gallery figure:hover::after {
+      content: 'AMPLIAR ↗';
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+      background: rgba(20, 20, 19, 0.8);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      padding: 0.2rem 0.5rem;
+      letter-spacing: 0.05em;
+      pointer-events: none;
+    }
+  </style>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© João Pedro Schwingel Carada — Portfólio Artístico &amp; Académico</div>
+      <div>Coimbra, Portugal</div>
+    </div>
+  </footer>
+
+  <script>
+    // OS 7 VÍDEOS EXCLUSIVOS DA PÁGINA "OBOÉ" E CONCERTOS MUSICAIS
+    // (Os 3 vídeos de projetos cénicos/performativos 8MT2q2NuviE, MUGjfG5PRRI e YV-XPsGa64o estão alocados apenas nos respetivos projetos)
+    const oboeConcertVideos = [
+      {
+        id: "4_TekgToM2w",
+        title: "Oboé — Registo de Concerto I",
+        subtitle: "Performance Musical · Oboé"
+      },
+      {
+        id: "wqbZG4g9BjI",
+        title: "Oboé — Registo de Concerto II",
+        subtitle: "Interpretação & Criação Sonora"
+      },
+      {
+        id: "cpDPgfs6_N8",
+        title: "Rite de la Lune (I e II) — Edward Michaël",
+        subtitle: "Oboé Solo · Performance"
+      },
+      {
+        id: "_HztjCh_Pno",
+        title: "Oboé — Registo de Concerto IV",
+        subtitle: "Oboé & Performance Contemporânea"
+      },
+      {
+        id: "z0hbkBmMyA0",
+        title: "Oboé — Registo de Concerto V",
+        subtitle: "Música de Câmara & Interpretação"
+      },
+      {
+        id: "dMZTNYD7nQg",
+        title: "Oboé — Registo de Concerto VI",
+        subtitle: "Oboé & Repertório de Concerto"
+      },
+      {
+        id: "h0BD7h9GfBY",
+        title: "J. Orlando Alves — Sonatina para Oboé e Piano",
+        subtitle: "Recital de Oboé & Piano"
+      }
+    ];
+
+    // OS 13 PROJETOS EXATOS DO WORDPRESS (https://joaopedrocarada.wordpress.com/portfolio/)
+    const projects = [
+{
+        id: "coimbra-the-best-city-to-live-and-to-love",
+        title: "Coimbra, The Best City to Live and to Love",
+        subtitle: "Produção Executiva, Assistência de Encenação & Desenho de Som · TEUC",
+        category: "Performance",
+        tags: ["Performance", "Música", "Arte Comunitária"],
+        year: "2026",
+        inConstruction: false,
+        thumbnail: "img/Coimbra%20TEUC/efcoimbra%20(5).jpg",
+        excerpt: "Encenação de Hugo Inácio pelo TEUC (exercício final da turma 2025/2026), apresentada no Teatro de Bolso do TEUC e na Mostra de Teatro Universitário (TAGV), com desdobramentos performativos no espaço público no Bash Beer Urban Fest e na grande arruada de encerramento do Festival Inopinado.",
+        description: `
+          <p><strong>SINOPSE</strong><br>
+          O TEUC, o teatro universitário mais antigo da Europa, apresenta encenação assinada pelo emergente intelectual, dramaturgo e programador sem vencimento do Convento São Francisco, Hugo Inácio. O elenco é formado por atores e atrizes que prometem um futuro risonho ao teatro português. De acordo com o Diretor, <em>“Coimbra, the best city to live and to love”</em> é uma obra original de Shakespeare, escrita às margens do rio Mondego. Ressecado de <em>Hamlet</em>, pela primeira vez, dá protagonismo a uma mulher, Cindazunda, que vive no meio do terrível confronto entre Alanos e Suevos. Será ela, no auge dos seus 15 anos, capaz de criar um vínculo de paz? Eis a questão.</p>
+
+          <p><strong>APRESENTAÇÕES EM SALA</strong></p>
+          <ul>
+            <li><strong>Teatro de Bolso do TEUC (Estreia — Exercício Final da Turma 2025/2026):</strong> 7, 8 e 9 de maio de 2026 às 21h30 | 10 de maio de 2026 às 18h00;</li>
+            <li><strong>Teatro Académico de Gil Vicente (TAGV):</strong> 16 de maio de 2026 às 21h30 — Encerramento da Mostra de Teatro Universitário (MTU), realizada em organização conjunta entre TAGV, CITAC, GEFAC, TEUC e Thíasos, e integrada no Ciclo Teatro e Artes Performativas – MIMESIS da Universidade de Coimbra.</li>
+          </ul>
+
+          <p><strong>DESDOBRAMENTOS &amp; INTERVENÇÕES NO ESPAÇO PÚBLICO</strong></p>
+          <ul>
+            <li><strong>Bash Beer Urban Fest (9 de maio de 2026):</strong> Intervenção performativa a partir de um excerto do espetáculo;</li>
+            <li><strong>Festa do Inopinado — Grande Arruada na Baixa de Coimbra (20 de setembro de 2026):</strong> Encerramento da 2.ª edição do Festival INOPINADO com o cortejo fúnebre da Rainha dos Bufões (nascida em 409 d.C. e homenageada pelas ruas de Coimbra). Sob direção artística de Hugo Inácio e direção musical de Ricardo Brito, cruzando teatro físico, música e performance com participação do TEUC, estudantes da ESEC, músicos da cidade e participantes da formação em Teatro de Rua orientada por Arturo Bernal.</li>
+          </ul>
+        `,
+        credits: `
+          <h4>Participação &amp; Funções no Projeto</h4>
+          <p><strong>João Pedro Schwingel Carada:</strong></p>
+          <p>• <strong>Produção Executiva e Direção de Produção</strong> (pela Direção do TEUC)</p>
+          <p>• <strong>Assistência de Encenação</strong></p>
+          <p>• <strong>Desenho de Som e Operação de Som</strong></p>
+          <br>
+          <h4>Créditos Fotográficos &amp; Visuais (Galeria)</h4>
+          <p>• <strong>Fotografia de cena (TAGV / TEUC):</strong> João Duarte (@j.o.a.o_duarte)</p>
+          <p>• <strong>Fotografia da Arruada (Festival Inopinado):</strong> Carlos Gomes (@carlogomes)</p>
+          <p>• <strong>Fotografia (Bash Beer Urban Fest):</strong> Registo fotográfico oficial do festival Bash Beer Urban Fest</p>
+          <p>• <strong>Cartazes, vídeo, comunicação e design gráfico:</strong> Maria Vitória do Valle</p>
+          <br>
+          <h4>Ficha Técnica e Artística (Espetáculo)</h4>
+          <p><strong>Encenação:</strong> Hugo Inácio</p>
+          <p><strong>Dramaturgia e Cenografia:</strong> Criação Coletiva</p>
+          <p><strong>Criação e interpretação:</strong> Gabriel Figueira, Lara Parreira, Leandro Cotrim Dias, Luísa Rosmaninho, Mariana Matos, Raven Adara do Canto, Victor Hugo Arantes de Carvalho, Linda-Inês Bertelo</p>
+          <p><strong>Desenho de som:</strong> João Pedro Schwingel Carada</p>
+          <p><strong>Desenho de luz:</strong> Simão Lopes</p>
+          <p><strong>Música:</strong> DJ No New News (“As Princesas Também Fazem Cocó”)</p>
+          <p><strong>Operação de luz e som:</strong> Simão Lopes, João Pedro Schwingel Carada e formandos do Curso de Técnica de Luz e Som do TEUC</p>
+          <p><strong>Figurinos:</strong> Carolina Moreira</p>
+          <p><strong>Produção:</strong> TEUC (Direção de Produção: João Pedro Schwingel Carada)</p>
+          <p><strong>Coprodução MTU:</strong> Teatro Académico de Gil Vicente, CITAC, GEFAC, TEUC, Thíasos</p>
+          <p><strong>Apoios:</strong> Universidade de Coimbra, MÁFIA, TAGV, CITAC, GEFAC, A Cabra, RUC, Linha de Fuga, A Escola da Noite, IPDJ</p>
+          <p><strong>Agradecimentos:</strong> Arturo Bernal | <strong>Duração:</strong> ~80 min | <strong>Classificação:</strong> M/16</p>
+          <br>
+          <h4>Ficha Técnica (Desdobramento — Arruada Inopinado)</h4>
+          <p><strong>Direção artística:</strong> Hugo Inácio | <strong>Direção musical:</strong> Ricardo Brito | <strong>Formação Teatro de Rua:</strong> Arturo Bernal</p>
+          <p><strong>Iniciativa:</strong> O Elefante na Sala | <strong>Apoios:</strong> DGArtes, Convento São Francisco, UF Coimbra, Agência para a Promoção da Baixa de Coimbra, Município de Coimbra | <strong>Media partner:</strong> Coimbra Coolectiva</p>
+        `,
+        videos: ["lS8QkOcXxJY"],
+        gallery: [
+          "img/Coimbra%20TEUC/efcoimbra%20(19).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(15).jpeg",
+          "img/Coimbra%20TEUC/efcoimbra%20(5).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(1).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(2).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(3).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(6).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(7).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(8).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(9).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(10).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(11).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(12).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(13).jpg",
+          "img/Coimbra%20TEUC/efcoimbra%20(14).jpeg",
+          "img/Coimbra%20TEUC/efcoimbra%20(16).jpeg",
+          "img/Coimbra%20TEUC/efcoimbra%20(17).jpeg",
+          "img/Coimbra%20TEUC/efcoimbra%20(18).jpeg"
+        ]
+      },
+{
+        id: "mundos-interiores",
+        title: "Mundos Interiores",
+        subtitle: "Performance-Instalação · Ana Borralho & João Galante (N.I.B.)",
+        category: "Performance",
+        tags: ["Performance", "Artes Visuais"],
+        year: "2026",
+        inConstruction: false,
+        thumbnail: "img/Mundos%20Interiores/fotosmundosinteriores%20(20).jpeg",
+        excerpt: "Performance-instalação que desafia o público a abandonar o papel de simples observador. Perante corpos imóveis e silenciosos no Largo do Romal, cada visitante é convidado a aproximar-se, escolher o que quer ouvir e criar uma relação de intimidade e escuta.",
+        description: `
+          <p><strong>MUNDOS INTERIORES</strong> é uma performance-instalação que desafia o público a abandonar o papel de simples observador. Perante corpos imóveis e silenciosos, cada visitante é convidado a aproximar-se, a criar uma relação de intimidade e a descobrir o que se revela para além da aparência.</p>
+          <p>Construída a partir da proximidade entre corpos, vozes e público, os performers sussurram textos num espaço partilhado e convidam quem assiste a aproximar-se, escolher o que quer ouvir e encontrar o seu próprio lugar para escutar. Ao explorar a proximidade entre performers e público, a obra questiona as fronteiras entre quem observa e quem é observado, transformando a experiência artística num espaço de encontro, silêncio, escuta e partilha, onde, por momentos, todas as vozes se encontram.</p>
+          <p>Projeto desenvolvido e apresentado no âmbito do programa <strong>Verão a Dois Tempos — N.I.B. (Núcleo de Imaginação da Baixa)</strong>, na Baixa de Coimbra.</p>
+          <ul>
+            <li><strong>Residência artística:</strong> 17 a 21 de julho de 2026</li>
+            <li><strong>Apresentação pública:</strong> 22 de julho de 2026, às 19h00 — Largo do Romal, Baixa de Coimbra</li>
+          </ul>
+        `,
+        credits: `
+          <h4>Ficha Técnica</h4>
+          <p><strong>Conceito, direção artística, espaço cénico e luz:</strong> Ana Borralho &amp; João Galante</p>
+          <p><strong>Performers:</strong> Cristina Valentim, Carolina Sofia Oliveira Moreira, Fátima Almeida, Gabriel Figueira, João Oliveira, João Pedro Carada, Inês Bastos, Lourenço Leitão, Luís Cavalcanti, Luísa Rosmaninho, Margarida Lima, Maria João Carvalho, Matheus Almeida, Melanie Mós, Pedro Gama, Rita Lemos, Rodrigo Ferreira, Samuel Andrade</p>
+          <p><strong>Assistência artística:</strong> André Uerba, Cátia Leitão (aka Alface)</p>
+          <p><strong>Texto:</strong> A partir de fragmentos da obra teatral de Rodrigo Garcia</p>
+          <p><strong>Tradução para português e colaboração dramatúrgica:</strong> Tiago Rodrigues</p>
+          <p><strong>Direção de Produção:</strong> Marise Francisco</p>
+          <p><strong>Produção Executiva:</strong> Salomé Ventura</p>
+          <p><strong>Fotografia:</strong> Teresa Raquel Martins</p>
+          <p><strong>Programação:</strong> Verão a Dois Tempos · N.I.B. — Núcleo de Imaginação da Baixa</p>
+          <p><strong>Apoio e Agradecimentos:</strong> A Escola da Noite, Cena Lusófona e Tecedeiras de Almalaguês</p>
+        `,
+        videos: [],
+        gallery: [
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(20).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(1).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(2).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(3).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(4).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(5).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(6).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(7).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(8).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(9).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(10).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(11).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(12).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(13).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(14).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(15).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(16).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(17).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(18).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(19).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(21).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(22).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(23).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(24).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(25).jpeg",
+          "img/Mundos%20Interiores/fotosmundosinteriores%20(26).jpeg"
+        ]
+      },
+{
+        id: "slow",
+        title: "SLOW",
+        subtitle: "Cocriação, Performance & Sonoplastia · Corpos Performáticos (CAUC) / Festival Abril Dança Coimbra",
+        category: "Performance",
+        tags: ["Performance", "Música"],
+        year: "2026",
+        inConstruction: false,
+        thumbnail: "img/SLOW/slowtagv%20(27).jpg",
+        excerpt: "Seis artistas contrariam a aceleração do mundo. Através da dança, de métodos somáticos, da paisagem sonora e da subversão do Tai Chi, propomos suspender o tempo no palco do TAGV, no âmbito do Festival Abril Dança Coimbra.",
+        description: `
+          <p><strong>SINOPSE</strong><br>
+          Seis artistas contrariam a aceleração do mundo. O que acontece quando decidimos filmar caracóis, servir chá e desconstruir para encontrar a lentidão? Através da dança, de métodos somáticos e da subversão do Tai Chi, propomos suspender o tempo para que os nossos desejos deixem de ser atropelados pela pressa.</p>
+
+          <p>Durante dois meses, os artistas do grupo <strong>Corpos Performáticos</strong> do doutoramento do Colégio das Artes em Coimbra reuniram-se para ensaiar o tema da lentidão. Partilharam práticas de dança, métodos somáticos, de regeneração, de lentidão e afetos quotidianos para contrariar os tempos atuais de aceleração e questionar para onde tudo isto nos arrasta. A atenção e o movimento fazem-nos refletir sobre a quase impossibilidade de pararmos, de contemplarmos, condicionados pelo aceleramento da vida, colidindo com os nossos desejos que são atropelados, muitas vezes, por nós próprios. Filmar e observar caracóis, subverter o vocabulário formal do Tai Chi, servir chá, descolonizar o corpo e a palavra, dar luz a uma terra com deficiência climática, fazer e desfazer, construir e destruir para suspender o tempo.</p>
+
+          <p><strong>CONTEXTO &amp; INVESTIGAÇÃO ARTÍSTICA</strong><br>
+          <em>Corpos Performáticos</em> é um Grupo de Performance do Colégio das Artes da Universidade de Coimbra (CAUC) que aborda a performance e a sua investigação a partir da prática artística, combinando-a com uma reflexão teórica. Com acompanhamento de Susana Chiocca, o projeto reúne artistas/investigadorxs interessadxs em apresentar os seus processos práticos como forma de encontrar caminhos para a escrita no que significa uma prática artística enquanto investigação.</p>
+
+          <p><strong>FESTIVAL ABRIL DANÇA COIMBRA</strong><br>
+          Partindo de um interesse comum pela dança contemporânea e reconhecendo o lugar central que a dança ocupa na renovação da linguagem das artes performativas nas últimas décadas, a Câmara Municipal de Coimbra / Convento São Francisco e a Universidade de Coimbra / Teatro Académico de Gil Vicente promovem a organização conjunta de <em>Abril Dança Coimbra</em>.</p>
+
+          <ul>
+            <li><strong>Data e Horário:</strong> 28 de abril de 2026, às 18h30</li>
+            <li><strong>Local:</strong> Palco do Teatro Académico de Gil Vicente (TAGV), Coimbra</li>
+            <li><strong>Duração:</strong> 1h00 | <strong>Classificação:</strong> M/16</li>
+          </ul>
+        `,
+        credits: `
+          <h4>Participação &amp; Funções no Projeto</h4>
+          <p><strong>João Pedro Schwingel Carada:</strong></p>
+          <p>• <strong>Cocriação e Performance</strong></p>
+          <p>• <strong>Sonoplastia e Desenho de Som</strong></p>
+          <br>
+          <h4>Ficha Técnica e Artística</h4>
+          <p><strong>Cocriação e interpretação:</strong> Gabriela Manfredini, Elisabete Magalhães, João Carada, Marianne Baillot, Alexandre Corrazza e Sónia Salcedo</p>
+          <p><strong>Sonoplastia e desenho de som:</strong> João Pedro Schwingel Carada</p>
+          <p><strong>Coletivo / Investigação:</strong> Corpos Performáticos — Grupo de Performance do Colégio das Artes da Universidade de Coimbra (CAUC)</p>
+          <p><strong>Acompanhamento:</strong> Susana Chiocca</p>
+          <p><strong>Local:</strong> Teatro Académico de Gil Vicente (TAGV)</p>
+          <p><strong>Organização:</strong> Festival Abril Dança Coimbra — Teatro Académico de Gil Vicente (Universidade de Coimbra) e Câmara Municipal de Coimbra / Convento São Francisco</p>
+        `,
+        videos: ["8j2HnYnoWXg", "SlR359UMf34"],
+        gallery: [
+          "img/SLOW/slowtagv%20(27).jpg",
+          "img/SLOW/slowtagv%20(1).jpg",
+          "img/SLOW/slowtagv%20(2).jpg",
+          "img/SLOW/slowtagv%20(3).jpg",
+          "img/SLOW/slowtagv%20(4).jpg",
+          "img/SLOW/slowtagv%20(5).jpg",
+          "img/SLOW/slowtagv%20(6).jpg",
+          "img/SLOW/slowtagv%20(7).jpg",
+          "img/SLOW/slowtagv%20(8).jpg",
+          "img/SLOW/slowtagv%20(9).jpg",
+          "img/SLOW/slowtagv%20(10).jpg",
+          "img/SLOW/slowtagv%20(11).jpg",
+          "img/SLOW/slowtagv%20(12).jpg",
+          "img/SLOW/slowtagv%20(13).jpg",
+          "img/SLOW/slowtagv%20(14).jpg",
+          "img/SLOW/slowtagv%20(15).jpg",
+          "img/SLOW/slowtagv%20(16).jpg",
+          "img/SLOW/slowtagv%20(17).jpg",
+          "img/SLOW/slowtagv%20(18).jpg",
+          "img/SLOW/slowtagv%20(19).jpg",
+          "img/SLOW/slowtagv%20(20).jpg",
+          "img/SLOW/slowtagv%20(21).jpg",
+          "img/SLOW/slowtagv%20(22).jpg",
+          "img/SLOW/slowtagv%20(23).jpg",
+          "img/SLOW/slowtagv%20(24).jpg",
+          "img/SLOW/slowtagv%20(25).jpg",
+          "img/SLOW/slowtagv%20(26).jpg",
+          "img/SLOW/slowtagv%20(28).jpg",
+          "img/SLOW/slowtagv%20(29).jpg",
+          "img/SLOW/slowtagv%20(30).jpg",
+          "img/SLOW/slowtagv%20(31).jpg",
+          "img/SLOW/slowtagv%20(32).jpg",
+          "img/SLOW/slowtagv%20(33).jpg",
+          "img/SLOW/slowtagv%20(34).jpg",
+          "img/SLOW/slowtagv%20(35).jpg",
+          "img/SLOW/slowtagv%20(36).jpg",
+          "img/SLOW/slowtagv%20(37).jpg",
+          "img/SLOW/slowtagv%20(38).jpg",
+          "img/SLOW/slowtagv%20(39).jpg",
+          "img/SLOW/slowtagv%20(40).jpg",
+          "img/SLOW/slowtagv%20(41).jpg",
+          "img/SLOW/slowtagv%20(42).jpg",
+          "img/SLOW/slowtagv%20(43).jpg",
+          "img/SLOW/slowtagv%20(44).jpg",
+          "img/SLOW/slowtagv%20(45).jpg",
+          "img/SLOW/slowtagv%20(46).jpg"
+        ]
+      },      
+{
+        id: "perpetuo-paredes",
+        title: "Perpétuo Paredes",
+        subtitle: "Peça Teatral (Interpretação) · CITAC, TEUC, Secção de Fado AAC & DG/AAC",
+        category: "Performance",
+        tags: ["Performance"],
+        year: "2025–2026",
+        inConstruction: false,
+        thumbnail: "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(18).jpg",
+        excerpt: "QUEM ERA? Esta é a pergunta que põe a funcionar uma máquina teatral sobre a vida e obra de um guitarrista singular: Carlos Paredes. Um percurso emocional sobre a raiz e os sonhos que estão atrás de cada nota musical, com encenação de Zé Paredes.",
+        description: `
+          <p><strong>QUEM ERA?</strong><br>
+          <em>“Os sonhos. Correm a empurrar-nos…”</em> Os sonhos caminham connosco, não os conseguimos despir. Nem ao chegar a casa e deixar o pó da estrada, esquecer as memórias, levantar os lençóis que antes cobriam as vergonhas escondidas, nos abandonam. No fundo das gavetas há muito fechadas, há histórias que nunca foram contadas, histórias que não importam a quem governa as nossas vidas. E ficam assim abandonadas à espera de que alguém as ressuscite.</p>
+
+          <p>Esta é a pergunta que põe a funcionar uma máquina teatral composta por oito intérpretes e músicos sobre a vida e obra de um guitarrista singular: <strong>Carlos Paredes</strong>. Cem anos depois do seu nascimento, investigamos sobre a tradição que dá origem à sua música e a rutura com essa mesma tradição, em busca duma linguagem pessoal e irrepetível. <strong>PERPÉTUO PAREDES</strong> é um percurso emocional sobre a raiz e os sonhos que estão atrás de cada nota musical.</p>
+
+          <p>Este espetáculo é o resultado da parceria entre o Círculo de Iniciação Teatral da Academia de Coimbra (CITAC), o Teatro dos Estudantes da Universidade de Coimbra (TEUC), a Secção de Fado da Associação Académica de Coimbra e a Direção-Geral da Associação Académica de Coimbra (DG/AAC), com encenação e dramaturgia de Zé Paredes em homenagem ao centenário de nascimento de Carlos Paredes (uma encomenda do Convento São Francisco no âmbito do Festival Correntes de Um Só Rio).</p>
+
+          <p><strong>APRESENTAÇÕES &amp; DIGRESSÃO</strong></p>
+          <ul>
+            <li><strong>Convento São Francisco — Black Box (Estreia · 8.ª Edição do Festival Correntes de Um Só Rio):</strong> 1 de outubro de 2025 às 21h30 (público geral) e 3 de outubro de 2025 às 14h30 (escolas) e 21h30 (público geral);</li>
+            <li><strong>Teatro Académico de Gil Vicente (TAGV · 7.ª Edição do Ciclo de Música Orphika da Reitoria da UC):</strong> 8 de novembro de 2025, às 21h30;</li>
+            <li><strong>Teatro da Cerca de São Bernardo (TCSB):</strong> 20 e 21 de fevereiro de 2026, às 21h30;</li>
+            <li><strong>Pazo da Cultura de Pontevedra, Espanha (XVII MITEU — Mostra Internacional de Teatro Universitario de Pontevedra, Universidade de Vigo):</strong> 23 de abril de 2026, às 20h30.</li>
+          </ul>
+        `,
+        credits: `
+          <h4>Participação no Projeto</h4>
+          <p><strong>João Pedro Schwingel Carada:</strong> Ator / Intérprete</p>
+          <br>
+          <h4>Créditos Fotográficos (Galeria)</h4>
+          <p>• <strong>Fotografia (PPMiguel 1 a 35):</strong> Miguel Afonso Carranca</p>
+          <p>• <strong>Fotografia (PPTeresa 1 a 11):</strong> Teresa Martins</p>
+          <br>
+          <h4>Ficha Artística e Técnica</h4>
+          <p><strong>Encenação:</strong> Zé Paredes</p>
+          <p><strong>Dramaturgia:</strong> Zé Paredes com fragmentos poéticos de Ana Nogueira, António José Forte, Edmundo Bettencourt e Fernando Pessoa</p>
+          <p><strong>Elenco / Interpretação:</strong> Ana Nogueira, Bruna Marques, Catarina Durão, João Pedro Schwingel Carada, Jorgette Dumby, Maria Antónia Torres, Maria Luísa Forjaz, Verônica Zanon</p>
+          <p><strong>Música (tocam Carlos, Artur e Gonçalo Paredes):</strong> Hugo Gambóias, Diogo Passos, Simão Mota, Luísa Amaro</p>
+          <p><strong>Apoio ao movimento (Danças europeias):</strong> Diogo Lobo</p>
+          <p><strong>Sonoplastia e Produção Musical:</strong> Diogo Lobo, Guilherme Correia</p>
+          <p><strong>Composição (Mudar de Vida):</strong> Ibán Pérez</p>
+          <p><strong>Desenho de Luz:</strong> Diogo Lobo</p>
+          <p><strong>Cenografia:</strong> Maria Luísa Forjaz, CITAC</p>
+          <p><strong>Desenho do Baloiço:</strong> Maria Forjaz | <strong>Construção do Baloiço:</strong> Rui Paulo Murta, Valdemar Monteiro</p>
+          <p><strong>Figurinos e Adereços:</strong> Ândria do Ó, CITAC</p>
+          <p><strong>Montagem e Assistência Técnica:</strong> Diogo Lobo, Zé Diogo</p>
+          <p><strong>Design Gráfico e Ilustrações:</strong> Margarida Monteiro, Maria Antónia Torres</p>
+          <p><strong>Vídeo:</strong> Zhang Qinzhe, MOOV</p>
+          <p><strong>Produção:</strong> CITAC, TEUC, Secção de Fado AAC, DG/AAC (José Machado, Francisca Monteiro, Miguel Patrão, Beatriz Branquinho e João Baldaia)</p>
+          <p><strong>Produção Executiva:</strong> CITAC | <strong>Comunicação:</strong> Maria Antónia Torres, CITAC, TEUC, DG/AAC</p>
+          <p><strong>Apoio Financeiro:</strong> Câmara Municipal de Coimbra / Convento São Francisco, Universidade de Coimbra</p>
+          <p><strong>Apoio Logístico:</strong> A Escola da Noite, Casa da Cidadania e da Língua, Cena Lusófona, SESLA, Deyse Marinho Fios Design, GEFAC, Máfia, Salão Brazil, SASUC, TAGV, TCSB</p>
+          <p><strong>Parceiros Media:</strong> A Cabra, Diário de Coimbra, RUC, RTP</p>
+          <p><strong>Agradecimentos:</strong> Luísa Amaro, Delfim Leão, Jorge Graça, Sílvio Santos, Zé Diogo, A Escola da Noite, Monica Camaño, McMurta, Maria Salete Dias, Pedro Rodrigues</p>
+          <p><strong>Duração:</strong> 90 min | <strong>Classificação:</strong> M/12</p>
+        `,
+        videos: ["82td5L8CTpY"],
+        gallery: [
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(18).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(1).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(2).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(3).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(4).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(5).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(6).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(7).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(8).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(9).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(10).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(11).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(12).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(13).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(14).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(15).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(16).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(17).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(19).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(20).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(21).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(22).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(23).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(24).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(25).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(26).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(27).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(28).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(29).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(30).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(31).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(32).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(33).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(34).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPMiguel%20(35).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPTeresa%20(1).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPTeresa%20(2).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPTeresa%20(3).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPTeresa%20(4).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPTeresa%20(5).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPTeresa%20(6).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPTeresa%20(7).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPTeresa%20(8).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPTeresa%20(9).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPTeresa%20(10).jpg",
+          "img/Perp%C3%A9tuo%20Paredes/PPTeresa%20(11).jpg"
+        ]
+      },
+{
+        id: "cafe-com-leite",
+        title: "Café com Leite",
+        subtitle: "Performance Solo & Ação Relacional · GPCA / Colégio das Artes (UC)",
+        category: "Performance",
+        tags: ["Performance"],
+        year: "2025",
+        inConstruction: false,
+        thumbnail: "img/Caf%C3%A9%20com%20leite/cafecomleite%20(3).jpeg",
+        excerpt: "Quando alguém se dá conta do seu próprio corpo? E do corpo do outro? Em que ponto construímos a ponte que nos conecta? Performance solo experimental sobre pertença, miscigenação, memória familiar e fronteiras entre o afeto e a indiferença.",
+        description: `
+          <p><strong>SINOPSE</strong><br>
+          <strong>café-com-leite | café com leite</strong> <em>(ca·fé com lei·te)</em><br>
+          <em>substantivo masculino:</em><br>
+          1. Cor acastanhada semelhante à cor do café com leite.<br>
+          <em>adjetivo de dois géneros e de dois números:</em><br>
+          2. Que tem essa cor.<br>
+          3. Diz-se da política relativa ao Brasil das três primeiras décadas do século XX, em que o poder federal alternava entre representantes do estado de São Paulo, grande produtor de café, e do estado de Minas Gerais, grande produtor de café e laticínios.<br>
+          4. Aquele que é protegido pela indiferença. Não é entendido o suficiente para defender sua posição. Não é ingénuo o suficiente para não participar da ação.</p>
+
+          <p>Quando alguém se dá conta do seu próprio corpo? E do corpo do outro? Em que ponto construímos a ponte que nos conecta? E o mar que nos separa? A 130 km de distância há um sentimento de pertença. Do lado de dentro da porta; afeto. Da porta pra fora; indiferença.</p>
+
+          <p><strong>SOBRE A AÇÃO PERFORMATIVA E O PROCESSO</strong><br>
+          <em>Café com Leite</em> parte de uma investigação autoetnográfica sobre identidade racial, miscigenação e deslocamento, ancorada nas memórias de infância do artista: nascido numa família miscigenada, passava os verões na casa da avó, num contexto maioritariamente de ascendência alemã onde experienciava a condição de ser o único corpo miscigenado.</p>
+          <p>A ação desenvolve-se em três momentos: inicia-se como um dispositivo relacional de partilha e hospitalidade, em que o performer se senta para beber café com leite e conversar com as pessoas que passam pelo espaço. Entre essas conversas, a intimidade desloca-se para o ritual: o artista banha o próprio corpo em café com leite enquanto recita memórias de infância registadas no seu diário. Por fim, encerra a ação lavando o corpo com água e sabão.</p>
+
+          <p><strong>APRESENTAÇÃO</strong><br>
+          Apresentado no dia <strong>24 de outubro de 2025</strong>, a partir das 15h00, no âmbito do ciclo <em>Corpos Performáticos — Acções Performativas</em> do <strong>GPCA (Grupo de Performance do Colégio das Artes da Universidade de Coimbra)</strong>, desenvolvido a partir de encontros laboratoriais mensais acompanhados por Susana Chiocca e convidadxs.</p>
+        `,
+        credits: `
+          <h4>Ficha Técnica</h4>
+          <p><strong>Conceção, criação, texto e performance:</strong> João Pedro Schwingel Carada</p>
+          <p><strong>Contexto e Curadoria Laboratorial:</strong> GPCA — Grupo de Performance do Colégio das Artes da Universidade de Coimbra (acompanhamento de Susana Chiocca e convidadxs)</p>
+          <p><strong>Artistas participantes na programação (24/10/2025):</strong> Adrián Montenegro, Gabriela Manfredini, Hugo Leite, João Carada, Marianne Baillot</p>
+          <p><strong>Local:</strong> Colégio das Artes da Universidade de Coimbra</p>
+          <p><strong>Registo fotográfico:</strong> Fotografias cedidas pelo público presente na ação</p>
+        `,
+        videos: [],
+        gallery: [
+          "img/Caf%C3%A9%20com%20leite/cafecomleite%20(3).jpeg",
+          "img/Caf%C3%A9%20com%20leite/cafecomleite%20(9).jpg",
+          "img/Caf%C3%A9%20com%20leite/cafecomleite%20(1).jpeg",
+          "img/Caf%C3%A9%20com%20leite/cafecomleite%20(2).jpeg",
+          "img/Caf%C3%A9%20com%20leite/cafecomleite%20(4).jpeg",
+          "img/Caf%C3%A9%20com%20leite/cafecomleite%20(5).jpeg",
+          "img/Caf%C3%A9%20com%20leite/cafecomleite%20(6).jpeg",
+          "img/Caf%C3%A9%20com%20leite/cafecomleite%20(7).jpeg",
+          "img/Caf%C3%A9%20com%20leite/cafecomleite%20(8).jpeg"
+        ]
+      },      
+      {
+        id: "o-nao-lugar-que-habito",
+        title: "O Não-Lugar Que Habito",
+        subtitle: "Experiência Performativa",
+        category: "Artes Visuais",
+        tags: ["Artes Visuais", "Performance"],
+        year: "2024–2025",
+        inConstruction: false,
+        excerpt: "Saudade. “It’s a very special feeling of missing, longing something… it’s meant to be experienced for a long time”. Experiência performativa que trabalha, a partir do som, da pintura e da interação com o público, as noções da imaterialidade do entendimento de casa e de saudade.",
+        description: `
+          <p>Saudade. “It’s a very special feeling of missing, longing something… it’s meant to be experienced for a long time”.</p>
+          <p>“O Não-Lugar Que Habito” é uma experiência performativa que trabalha, a partir do som, da pintura e da interação com o público, as noções da imaterialidade do entendimento de casa e de saudade enquanto um ser em trânsito que habita o não-lugar. Esse trabalho teve como ponto de partida a residência artística “Saudade É Ser Depois de Ter”, proposta pela artista Íris Faria: um ambiente de criação artística formado por imigrantes. Nesse sentido, surgiram questionamentos sobre o que é saudade, o que é casa e como é esse processo de trânsito – material e imaterial.</p>
+          <p>Num primeiro momento, a partir da escuta de uma paisagem sonora, os visitantes da exposição sobre o processo de residência foram convidados a criar uma tela e um varal coletivo a partir do contato da sua experiência de saudade com a experiência do outro. Nessa nova etapa do trabalho, propõe-se uma nova viagem: a partir de entrevistas sobre memórias da construção individual desse não-lugar habitável, será feito um convite para que uma paisagem sonora e afetiva transforme-se em uma paisagem visual com o auxílio do trânsito da mão, do fluxo do sentido e da experiência do outro em direção à reconstrução dessa casa.</p>
+          <p>Existe um lugar qualquer que é constantemente reconstruído por aquele que experiencia o imigrar. É o cheiro da grama, o toque da mão de um ente querido no rosto, a sensação do sol que entrava pela janela, o gosto do café e do bolinho de chuva. A casa que habitamos não é estática. É transitória. É fluxo. É como aquela gaveta bagunçada que guarda objetos de memória. É este incessante não-lugar que habitamos.</p>
+        `,
+        credits: `
+          <h4>Ficha Técnica &amp; Exibições</h4>
+          <p><strong>Idealização e criação:</strong> João Pedro Carada e Maria Vitória do Valle</p>
+          <p><strong>Fotos:</strong> João Duarte (4–9)</p>
+          <br>
+          <p><strong>Exibições (resultado do processo de residência “Saudade É Ser Depois de Ter”):</strong></p>
+          <p>• <strong>Casa da Esquina:</strong> Exposição “Saudade É Ser Depois de Ter: Chegadas e Partidas de Imigrantes”, no dia 10 de maio de 2024.</p>
+          <p>• <strong>Teatro Académico Gil Vicente (TAGV):</strong> Exposição “Coração Pequenininho”, nos dias 16 e 17 de junho de 2025.</p>
+        `,
+        videos: ["8MT2q2NuviE"],
+        thumbnail: "img/O%20n%C3%A3o%20lugar%20que%20habito/onaolugar%20(1).png",
+        gallery: [
+          "img/O%20n%C3%A3o%20lugar%20que%20habito/onaolugar%20(1).png",
+          "img/O%20n%C3%A3o%20lugar%20que%20habito/onaolugar%20(7).jpg",
+          "img/O%20n%C3%A3o%20lugar%20que%20habito/onaolugar%20(8).jpg",
+          "img/O%20n%C3%A3o%20lugar%20que%20habito/onaolugar%20(9).jpg",
+          "img/O%20n%C3%A3o%20lugar%20que%20habito/onaolugar%20(10).jpg",
+          "img/O%20n%C3%A3o%20lugar%20que%20habito/onaolugar%20(11).jpg",
+          "img/O%20n%C3%A3o%20lugar%20que%20habito/onaolugar%20(12).jpg",
+          "img/O%20n%C3%A3o%20lugar%20que%20habito/onaolugar%20(13).jpg",
+          "img/O%20n%C3%A3o%20lugar%20que%20habito/onaolugar%20(14).jpg",
+          "img/O%20n%C3%A3o%20lugar%20que%20habito/onaolugar%20(15).jpg"
+        ]
+      },
+      {
+        id: "passaros-mortos-ainda-fazem-sombra",
+        title: "Pássaros Mortos Ainda Fazem Sombra",
+        subtitle: "Peça Teatral · TEUC",
+        category: "Performance",
+        tags: ["Performance"],
+        year: "2025",
+        inConstruction: false,
+        excerpt: "Há noites que não terminam. Noites que se arrastam como raízes, se entranham no corpo, escurecem o pensamento. Entre o surreal e o existencial, dançamos com os pesadelos, tocamos a beira do abismo. E mesmo na mais longa noite, pássaros mortos ainda fazem sombra.",
+        description: `
+          <p>Há noites que não terminam.<br>
+          Noites que se arrastam como raízes, se entranham no corpo, escurecem o pensamento. Noites que não pedem permissão, apenas vêm.<br>
+          Aqui, o tempo é dobrado. O horizonte não é linha, é ausência.<br>
+          E mesmo assim, algo insiste em dançar.<br>
+          Como pássaros que já não sabem migrar, corpos flutuam entre o que foi e o que talvez ainda não tenha nome. A linguagem sonha, o corpo sonha, o chão abre-se em perguntas.<br>
+          Neste território de delírio e vento, o real dissolve-se no tempo, e cada passo pode ser um sonho, um fim, um começo.<br>
+          Talvez o mundo esteja dormindo. Ou talvez tenhamos esquecido como acordar.<br>
+          Entre o surreal e o existencial, dançamos com os pesadelos, tocamos a beira do abismo,<br>
+          Algo move-se — lento, silencioso, incandescente.<br>
+          E mesmo na mais longa noite,<br>
+          pássaros mortos ainda fazem sombra.</p>
+          <p><strong>Apresentações:</strong> 21, 22, 23, 24, 29, 30 e 31 de maio de 2025 | 21h30 | Teatro de Bolso do TEUC</p>
+        `,
+        credits: `
+          <h4>Ficha Técnica</h4>
+          <p><strong>Elenco:</strong> Ana Damião; Angelita Batista; Camila Di Iulio; João Pedro Carada; Maria Vitória do Valle; Rita Morais</p>
+          <p><strong>Encenação:</strong> Vicente Baptista</p>
+          <p><strong>Desenho e operação de luz:</strong> Simão Lopes</p>
+          <p><strong>Técnico de som:</strong> Iara Pires; Nuno Vasco</p>
+          <p><strong>Montagem:</strong> Simão Lopes; Diogo Lobo</p>
+          <p><strong>Fotografia:</strong> Paulo Góis</p>
+          <p><strong>Design gráfico e arte:</strong> Maria Vitória do Valle</p>
+          <p><strong>Vídeos e projeções:</strong> Maria Vitória do Valle</p>
+          <p><strong>Sonoplastia:</strong> João Pedro Carada</p>
+          <p><strong>Cenário e figurino:</strong> Criação coletiva</p>
+          <p><strong>Texto:</strong> Criação coletiva</p>
+          <p><strong>Produção:</strong> TEUC</p>
+        `,
+       thumbnail: "img/Passaros%20Mortos/passarosteuc%20(1).jpg",
+        videos: ["M0I--0Pw3UA", "YV-XPsGa64o"],
+        gallery: [
+          "img/Passaros%20Mortos/passarosteuc%20(1).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(2).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(3).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(4).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(5).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(6).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(7).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(8).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(9).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(10).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(11).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(12).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(13).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(14).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(15).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(16).jpg",
+          "img/Passaros%20Mortos/passarosteuc%20(17).jpg"
+        ]
+      },
+      {
+        id: "o-banquete-de-platao",
+        title: "O Banquete de Platão",
+        subtitle: "Peça Teatral · Grupo Thíasos",
+        category: "Performance",
+        tags: ["Performance"],
+        year: "2024–2025",
+        inConstruction: false,
+        excerpt: "Na noite após a vitória do eloquente dramaturgo Ágaton no grande festival de tragédia de Atenas, a Grande Dionísia, os seus amigos Fedro, Pausânias, Aristófanes, Erixímaco e Sócrates juntam-se em um symposium e proclamam discursos acerca do amor.",
+        description: `
+          <p>Na noite após a vitória do eloquente dramaturgo, Ágaton, no grande festival de tragédia de Atenas, a Grande Dionísia, os seus amigos: Fedro, Pausânias, Aristófanes, Erixímaco e Sócrates juntam-se em um <em>symposium</em> e proclamam discursos acerca do amor. Com experiências diferentes, os discursos convergem e complementam o outro, escondem e confessam sobre um dos elementos centrais da vida dos deuses e dos homens.</p>
+          <p><strong>Participação como intérprete nas seguintes apresentações:</strong></p>
+          <ul>
+            <li>XXVII Festival Juvenil Europeu de Teatro Grecolatino, na Sala Cultura de Santiponce (Sevilha), no dia 20 de março de 2025;</li>
+            <li>Formação de Professores (XXV FESTEA), no peristilo do Museu Nacional de Conímbriga (Coimbra), no dia 25 de outubro de 2024;</li>
+            <li>Exposição XXV FESTEA, no Teatro Paulo Quintela da Faculdade de Letras da Universidade de Coimbra, no dia 22 de outubro de 2024;</li>
+            <li>Mercadinho Romano de Rio Maior, no dia 19 de outubro de 2024;</li>
+            <li>Cria’ctividade, no Teatro Paulo Quintela da FLUC, no dia 7 de outubro de 2024;</li>
+            <li>Colóquio “Joaquim Machado de Castro. Arte, cultura e pensamento”, no Teatro Paulo Quintela da FLUC, no dia 27 de setembro de 2024.</li>
+          </ul>
+        `,
+        credits: `
+          <h4>Ficha Técnica</h4>
+          <p><strong>Texto original:</strong> Platão</p>
+          <p><strong>Tradução:</strong> Maria Teresa Schiappa de Azevedo</p>
+          <p><strong>Adaptação:</strong> Izabel de Rohan Rocha Lima, Lucas dos Santos Silva, Maria Vitória do Valle, Stéphanie Lopes, Tiago Nuno Ferraz Monteiro</p>
+          <p><strong>Encenação:</strong> Maria Vitória do Valle</p>
+          <p><strong>Assistente de encenação:</strong> Marina Gialluca</p>
+          <p><strong>Interpretação:</strong> Clara Dias, Eulália Marques, Gabriel Figueira, Izabel de Rohan Rocha Lima, Mário Bento, Paco Toscanino, Patrícia Oliveira, Stéphanie Lopes, Tiago Nuno Ferraz Monteiro, João Pedro Carada, Tomás Ribeiro</p>
+          <p><strong>Intérprete musical (flauta transversal):</strong> Clara Dias</p>
+          <p><strong>Produção:</strong> Catarina Sofia Barros Luís, Izabel de Rohan Rocha Lima</p>
+          <p><strong>Assistente de produção:</strong> Inês Correia Costa</p>
+          <p><strong>Figurino:</strong> Ed Freitas, Joana Val-do-Rio, Maria Vitória do Valle</p>
+          <p><strong>Maquilhagem e caracterização:</strong> Inês Correia Costa</p>
+          <p><strong>Coreografia:</strong> Clara Dias e Maria Vitória do Valle</p>
+          <p><strong>Paisagem sonora:</strong> Inês Cruz, Gabriela Pereira, Lara Custódio, Lucas dos Santos Silva, Luísa Campos, Rui Santos Silva, Tomás Mellídez Imaginário</p>
+          <p><strong>Desenho de luz:</strong> Maria Vitória do Valle | <strong>Técnica de luz:</strong> Luísa Campos | <strong>Técnica de som:</strong> Inês Cruz</p>
+          <p><strong>Divulgação &amp; Design gráfico:</strong> Eulália Marques | <strong>Comunicação e imagem:</strong> Clara Dias, Eulália Marques</p>
+          <p><strong>Fotos:</strong> Paulo Costa Góis, Izabel de Rohan (6) e João Pedro Carada (7)</p>
+        `,
+        videos: [],
+        thumbnail: "img/O%20banquete/obanquete%20(2).jpg",
+        gallery: [
+          "img/O%20banquete/obanquete%20(1).jpg",
+          "img/O%20banquete/obanquete%20(2).jpg",
+          "img/O%20banquete/obanquete%20(3).jpg",
+          "img/O%20banquete/obanquete%20(4).jpg",
+          "img/O%20banquete/obanquete%20(5).jpg",
+          "img/O%20banquete/obanquete%20(6).jpg",
+          "img/O%20banquete/obanquete%20(7).jpg"
+        ]
+      },
+      {
+        id: "o-suplicio-dos-doces",
+        title: "O Suplício dos Doces",
+        subtitle: "Peça Teatral · Associação Cultural Thíasos",
+        category: "Performance",
+        tags: ["Performance"],
+        year: "2024",
+        inConstruction: false,
+        excerpt: "Em 26 de outubro de 2024, a Associação Cultural Thíasos apresentou “SUPLÍCIO DOS DOCES”, uma comédia adaptada do texto de Silvestre Aranha em que doces portugueses são julgados pelo maior crime de todos: serem demasiado doces!",
+        description: `
+          <p>Em 26 de outubro de 2024, a Associação Cultural Thíasos apresentou “SUPLÍCIO DOS DOCES”, uma peça de lambuzar os dedos, no 10º Colóquio DIAITA Luso-Brasileiro de Património, História e Culturas da Alimentação.</p>
+          <p>Especialmente adaptada para a ocasião, esta comédia é uma adaptação contemporânea do texto escrito por um Padre Jesuíta, em que doces portugueses são julgados pelo maior crime de todos: serem demasiado doces!</p>
+          <p>Baseado no texto de Silvestre Aranha, o texto jocoso constitui um testemunho da literatura composta por autores eclesiásticos, destinada ao entretenimento moralizante e pedagógico de alunos dos colégios de Coimbra.</p>
+        `,
+        credits: `
+          <h4>Ficha Técnica</h4>
+          <p><strong>Encenação:</strong> Maria Vitória do Valle</p>
+          <p><strong>Adaptação:</strong> Isabel Castiajo</p>
+          <p><strong>Produção:</strong> Izabel de Rohan</p>
+          <p><strong>Luz:</strong> Luísa Campos</p>
+          <p><strong>Maquilhagem e penteado:</strong> Inês Correia, Rute Marquês</p>
+          <p><strong>Figurino:</strong> Maria Vitória do Valle</p>
+          <p><strong>Elenco:</strong> Gabriel José Baptista Figueira, Izabel de Rohan, João Pedro Schwingel Carada, Mário Manuel Jacinto Pereira Guerra Bento, Stéphanie Marques Lopes, Tiago Nuno Ferraz Monteiro, Tomás Dinis Ribeiro</p>
+          <p><strong>Divulgação &amp; Design gráfico:</strong> Eulália Marques | <strong>Comunicação e imagem:</strong> Clara Dias, Eulália Marques</p>
+          <p><strong>Fotografia de cena:</strong> Paulo Costa Góis</p>
+        `,
+        videos: [],
+        thumbnail: "img/Antiarte/antiarte%20(5).jpg",
+        gallery: [
+          "img/Antiarte/antiarte%20(5).jpg",
+          "img/Antiarte/antiarte%20(1).jpg",
+          "img/Antiarte/antiarte%20(2).jpg",
+          "img/Antiarte/antiarte%20(3).jpg",
+          "img/Antiarte/antiarte%20(4).jpg",
+          "img/Antiarte/antiarte%20(6).jpg",
+          "img/Antiarte/antiarte%20(7).jpg",
+          "img/Antiarte/antiarte%20(8).jpg",
+          "img/Antiarte/antiarte%20(9).jpg",
+          "img/Antiarte/antiarte%20(10).jpg"
+        ]
+      },
+      {
+        id: "com-que-linha-te-cruzas",
+        title: "Com Que Linha Te Cruzas? Parte 1 – À Espera",
+        subtitle: "Peça Teatral & Intervenção Cívica · O Teatrão",
+        category: "Arte Comunitária",
+        tags: ["Performance", "Arte Comunitária"],
+        year: "2024–2025",
+        inConstruction: false,
+        excerpt: "As estações das linhas do Metro Mondego são em simultâneo o cenário e a inspiração para esta viagem que nos faz refletir sobre as linhas com que nos cruzamos todos os dias.",
+        description: `
+          <p><strong>O ESPETÁCULO</strong><br>
+          <em>Com que Linhas te Cruzas?</em> tem vários pontos de partida e de chegada. São pontos de chegada literais, no sentido em que as estações das linhas do Metro do Mondego são em simultâneo o cenário e a inspiração para esta viagem que nos faz refletir sobre as linhas com que nos cruzamos todos os dias. Estas linhas, espelhadas em pequenos episódios, histórias, cenas e fragmentos de vidas que ao longo de vários anos usaram a linha, viveram da linha, esperaram e lutaram pela linha, vão levar-nos através dessas memórias. São pontos de partida para projetarmos o futuro: que cidade pode construir-se a partir das linhas que nos ligam como comunidade e sociedade? Que relações e que histórias podem vir a ser as memórias que estão por construir?</p>
+          <p><strong>O PROJETO</strong><br>
+          Este espetáculo é a primeira de duas criações que acontecem no âmbito do projeto de intervenção artística e cívica <em>Com que Linhas te Cruzas?</em>, que durante 2024 e 2025 juntará em coprodução o Teatrão, a Metro Mondego e o Município de Coimbra, o Município da Lousã, o Município de Miranda do Corvo, com a colaboração da FEUC. Os espetáculos trabalham sobre a implementação do novo sistema de mobilidade urbana de Coimbra: sobre o passado turbulento deste projeto e a necessidade de superação do mesmo, em direção ao futuro mais sustentável e de progresso que este serviço público pode ajudar a desbloquear.</p>
+          <p>Na base do projeto está um intenso trabalho com as comunidades destes municípios: antes dos ensaios começarem, fomos até Lousã, Miranda do Corvo, Moinhos e Serpins fazer uma série de oficinas para conhecer estas populações. Aqui, ouvimos várias histórias e é delas que parte a dramaturgia.</p>
+        `,
+        credits: `
+          <h4>Ficha Técnica</h4>
+          <p><strong>Dramaturgia:</strong> Sandra Pinheiro</p>
+          <p><strong>Encenação:</strong> Marco Antonio Rodrigues</p>
+          <p><strong>Elenco Teatrão:</strong> Afonso Abreu, David Meco e Miguel Cordeiro</p>
+          <p><strong>Elenco da Comunidade (Coimbra):</strong> António Roque, Iara Alfredo, João Pedro Carada, Licínia Ferreira, Liliana Santos, Maria Adelaide de Oliveira, Maria do Pilar Veiga, Maria Filomena Folhas, Mariana Venâncio, Rafael Graça, Victoria Buco, Coro Dom Pedro de Cristo (junto às comunidades da Lousã, Miranda do Corvo, Moinhos e Serpins)</p>
+          <p><strong>Elementos Cénicos, Figurinos e Adereços:</strong> Filipa Malva</p>
+          <p><strong>Direção Musical e Composições Originais:</strong> Miguel Cordeiro</p>
+          <p><strong>Conceção e coordenação do trabalho com a comunidade:</strong> Isabel Craveiro</p>
+          <p><strong>Fotografia:</strong> Carlos Gomes, Teresa Valente</p>
+          <p><strong>Produção:</strong> Teatrão © 2024 em coprodução com Metro Mondego, Município de Coimbra, Lousã, Miranda do Corvo e FEUC</p>
+          <p><strong>Vídeo / Reportagem:</strong> ESEC TV</p>
+        `,
+        videos: ["TZ2-3o9os8g"],
+        thumbnail: "img/Com%20que%20linha/comquelinha%20(2).jpg",
+        gallery: [
+          "img/Com%20que%20linha/comquelinha%20(2).jpg",
+          "img/Com%20que%20linha/comquelinha%20(1).jpg",
+          "img/Com%20que%20linha/comquelinha%20(3).jpg",
+          "img/Com%20que%20linha/comquelinha%20(4).jpg",
+          "img/Com%20que%20linha/comquelinha%20(5).jpg",
+          "img/Com%20que%20linha/comquelinha%20(6).jpg",
+          "img/Com%20que%20linha/comquelinha%20(7).jpg"
+        ]
+      },
+      {
+        id: "antiarte-em-movimento",
+        title: "Antiarte em Movimento: Experimentos Performativos em Ruas de Coimbra",
+        subtitle: "Performance | Ação Urbana · Anozero Ágora",
+        category: "Performance",
+        tags: ["Performance", "Arte Comunitária"],
+        year: "2024",
+        inConstruction: false,
+        excerpt: "Ações Urbanas realizadas nas ruas da Baixa de Coimbra no âmbito da programação convergente “Anozero Ágora”, como desdobramento da residência/oficina na Casa da Esquina.",
+        description: `
+          <p>Ações Urbanas realizadas no âmbito da programação convergente “Anozero Ágora”, com curadoria de Nelson Martins:</p>
+          <p>– Ação realizada nas ruas da Baixa de Coimbra, como desdobramento da residência/oficina, realizada na Casa da Esquina entre os dias 9 e 12 de maio de 2024, com imigrantes de diversos campos artísticos. Idealizada pela curadora Íris Faria Vega, foram experienciadas performances no espaço público, mediadas pelo pensamento transversal de artistas como Hélio Oiticica, Lygia Clark e Grada Kilomba.</p>
+          <p>Carnavalizar estático. Desbundar o que é rotina. Festejar o que não é bonito. Sambar com o que machuca. Desfilar tropeçar nas possibilidades dos amanhãs.</p>
+        `,
+        credits: `
+          <h4>Programação &amp; Locais</h4>
+          <p><strong>Curadoria Anozero Ágora:</strong> Nelson Martins</p>
+          <p><strong>Idealização da Residência/Oficina:</strong> Íris Faria Vega</p>
+          <p><strong>Espaço de Residência:</strong> Casa da Esquina (9 a 12 de maio de 2024)</p>
+          <p><strong>Apresentações no Espaço Público:</strong></p>
+          <p>• Quarta, 15/05/2024 às 16h00 — Em frente ao Edifício do Chiado</p>
+          <p>• Sexta, 17/05/2024 às 15h00 — Rua Visconde da Luz, 23 (Baixa de Coimbra)</p>
+        `,
+        videos: [],
+        thumbnail: "img/Antiarte/antiarte%20(5).jpg",
+        gallery: [
+          "img/Antiarte/antiarte%20(5).jpg",
+          "img/Antiarte/antiarte%20(1).jpg",
+          "img/Antiarte/antiarte%20(2).jpg",
+          "img/Antiarte/antiarte%20(3).jpg",
+          "img/Antiarte/antiarte%20(4).jpg",
+          "img/Antiarte/antiarte%20(6).jpg",
+          "img/Antiarte/antiarte%20(7).jpg",
+          "img/Antiarte/antiarte%20(8).jpg",
+          "img/Antiarte/antiarte%20(9).jpg",
+          "img/Antiarte/antiarte%20(10).jpg"
+        ]
+      },
+      {
+        id: "resistencia-o-nosso-poema-e-um-triptico",
+        title: "Resistência: O Nosso Poema É Um Tríptico",
+        subtitle: "Exercício de Ficção e Teatro Documental · TEUC",
+        category: "Performance",
+        tags: ["Performance"],
+        year: "2024",
+        inConstruction: false,
+        excerpt: "Um coro de sete jovens decide procurar a Verdade sobre a Resistência Partisan Italiana, a Resistência do Povo Brasileiro e a Resistência dos Estudantes Portugueses em 1969.",
+        description: `
+          <p>Neste exercício de Ficção e Teatro Documental, um coro de sete jovens decide procurar a Verdade sobre a Resistência Partisan Italiana, a Resistência do Povo Brasileiro e a Resistência dos Estudantes Portugueses em 1969. Espetáculo apresentado a 1 de junho de 2024 no Teatro Académico de Gil Vicente (TAGV), como exercício final da turma 2023/2024 do Curso de Formação Teatral do TEUC, integrando a Mostra de Teatro Universitário 2024.</p>
+        `,
+        credits: `
+          <h4>Ficha Técnica</h4>
+          <p><strong>Direção / Encenação:</strong> Maria Quintelas</p>
+          <p><strong>Criação e Interpretação:</strong> João Pedro Carada e turma do Curso de Formação Teatral do TEUC 2023/2024</p>
+          <p><strong>Local:</strong> Teatro Académico de Gil Vicente (TAGV), Coimbra</p>
+          <p><strong>Produção:</strong> Teatro dos Estudantes da Universidade de Coimbra (TEUC)</p>
+        `,
+        videos: ["MUGjfG5PRRI"],
+        thumbnail: "img/Resist%C3%AAncia/resistenciateuc%20(7).jpg",
+        gallery: [
+          "img/Resist%C3%AAncia/resistenciateuc%20(1).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(2).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(3).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(4).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(5).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(6).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(7).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(8).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(9).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(10).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(11).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(12).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(13).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(14).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(15).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(16).jpg",
+          "img/Resist%C3%AAncia/resistenciateuc%20(17).jpg"
+        ]
+      },
+      {
+        id: "saudade-e-ser-depois-de-ter",
+        title: "Saudade É Ser Depois de Ter",
+        subtitle: "Residência Artística, Instalação-Performance & Paisagem Sonora · Casa da Esquina",
+        category: "Artes Visuais",
+        tags: ["Artes Visuais", "Performance", "Arte Comunitária", "Música"],
+        year: "2024",
+        inConstruction: false,
+        thumbnail: "img/Saudade%20%C3%A9%20ser/saudade%20(21).jpg",
+        excerpt: "Residência artística que reúne 20 artistas imigrantes e refugiadas na Casa da Esquina, cruzando música, teatro, artes visuais e artes performativas num mergulho colaborativo na temática da saudade.",
+        description: `
+          <p><strong>SOBRE A RESIDÊNCIA E A INSTALAÇÃO-PERFORMANCE</strong><br>
+          <em>“Saudade é ser depois de ter: chegadas e partidas de artistas imigrantes”</em> é uma residência artística que reúne 20 artistas imigrantes e refugiadas que desenvolvem trabalhos a partir de diferentes linguagens (música, teatro, artes visuais, artes performativas) com o intuito de mergulhar na temática da saudade, a partir de um trabalho imersivo e colaborativo. Com muita generosidade e afeto, essas pessoas propõem-se a partilhar com o público uma instalação performativa e duas vivências lúdico-sensoriais repletas de pedaços das intimidades de quem vive as dores e as delícias de sair do seu país de origem.</p>
+
+          <p>Dirigida pela atriz e encenadora <strong>Íris Faria Vega</strong> na <strong>Casa da Esquina</strong> (Coimbra), a residência apresentou uma instalação-performance, duas vivências lúdico-sensoriais e rodas de conversa como objeto de construção artística partilhado com a comunidade. Estas atividades inserem-se na investigação de doutoramento em Arte Contemporânea desenvolvida por Íris Faria na Universidade de Coimbra, sob orientação de Rita Gaspar Vieira.</p>
+
+          <p><strong>PAISAGEM SONORA &amp; DISPOSITIVO DE PINTURA PARTICIPATIVA</strong><br>
+          Como resultado do processo de residência, João Pedro Schwingel Carada realizou entrevistas com as mesmas perguntas sobre a temática da <em>saudade</em> a diversos artistas participantes, combinando esses testemunhos com recolhas de sons captadas ao longo dos encontros para compor uma paisagem sonora original.<br>
+          Durante a exposição, enquanto o público escutava esta paisagem sonora através de auscultadores, era convidado a intervir e pintar coletivamente um quadro que a artista Maria Vitória do Valle — também participante na residência — nunca tinha conseguido terminar de pintar (dispositivo que viria também a originar o projeto <em>“O Não-Lugar Que Habito”</em>).</p>
+
+          <p><strong>VIVÊNCIA LÚDICO-SENSORIAL E RELAÇÃO COM A INFÂNCIA</strong><br>
+          A partir da Instalação Performática, o processo de experimentações vivenciado ao longo da residência artística foi estendido às crianças e jovens. As crianças foram convidadas a experienciar a partilha íntima que envolveu o processo, podendo ver, tocar, mexer, tirar, colocar e pegar no que quisessem — propondo, longe de um museu convencional, uma outra relação viva com a arte e a memória.</p>
+
+          <p><strong>PROGRAMAÇÃO PÚBLICA (CASA DA ESQUINA, MARÇO DE 2024)</strong></p>
+          <ul>
+            <li><strong>9 de março de 2024 (18h00):</strong> Exibição da vídeo-performance <em>“Ensaios do ser depois de ter ou queria ter-me despedido melhor de vocês (Coimbra, 2023)”</em>, concebida e editada por Íris Vega e filmada por Isabella Notini;</li>
+            <li><strong>9 de março de 2024 (18h00 — 22h00):</strong> Apresentação da Instalação-Performance <em>“Saudade é ser depois de ter: chegadas e partidas de artistas imigrantes”</em>;</li>
+            <li><strong>10 de março de 2024 (11h00 — 13h00):</strong> Vivência Lúdico-Sensorial para crianças e jovens, construída juntamente com as pessoas artistas presentes nos encontros da residência.</li>
+          </ul>
+        `,
+        credits: `
+          <h4>Participação no Projeto</h4>
+          <p><strong>João Pedro Schwingel Carada:</strong> Artista em residência, recolha sonora, entrevistas, criação da paisagem sonora e cocriação de dispositivo participativo (com Maria Vitória do Valle)</p>
+          <br>
+          <h4>Registo Sonoro (Paisagem Sonora da Exposição)</h4>
+          <p>• <a href="https://drive.google.com/file/d/1k4sMUeTEpE_a1X_1WGuogQQbGvDYj4JV/view?usp=drive_link" target="_blank" rel="noopener" style="text-decoration: underline;">Ouvir Paisagem Sonora (Áudio da Exposição) ↗</a></p>
+          <br>
+          <h4>Ficha Técnica e Artística</h4>
+          <p><strong>Direção e Conceção da Residência:</strong> Íris Faria Vega</p>
+          <p><strong>Enquadramento Académico:</strong> Doutoramento em Arte Contemporânea — Colégio das Artes da Universidade de Coimbra (Orientação: Rita Gaspar Vieira)</p>
+          <p><strong>Espaço de Acolhimento e Apresentação:</strong> Casa da Esquina (Coimbra)</p>
+          <p><strong>Artistas Participantes:</strong> Vitória Negreiros, Adria Souza, Rodrigo Silveira, Fábio Beckert, Larissa Jones, Nelson Martins, Íris Faria Vega, Dalila Couti, Gabriela Borges, Roxanne Negreiros, Pietra Santos, Gabriela Oliveira, João Schwingel, Maria do Valle, André Phillipe, Karla Lima, Livian, Valerie Karpan, Marynka Marinichenko</p>
+          <p><strong>Fotografia:</strong> Amândio Bastos</p>
+        `,
+        videos: [],
+        gallery: [
+          "img/Saudade%20%C3%A9%20ser/saudade%20(21).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(1).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(2).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(3).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(4).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(5).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(6).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(7).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(8).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(9).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(10).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(11).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(12).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(13).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(14).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(15).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(16).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(17).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(18).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(19).jpg",
+          "img/Saudade%20%C3%A9%20ser/saudade%20(20).jpg"
+        ]
+      },
+      {
+        id: "let-me-sleep-now",
+        title: "Let Me Sleep Now",
+        subtitle: "Performance em Instalação Interativa · Mestrado em Música (Universidade de Aveiro)",
+        category: "Performance",
+        tags: ["Performance", "Artes Visuais", "Música"],
+        year: "2023",
+        inConstruction: false,
+        thumbnail: "img/Let%20me%20sleep%20now/letmesleepnow%20(1).jpg",
+        excerpt: "Performance em instalação interativa que encerra o ciclo prático do Mestrado em Música na Universidade de Aveiro. A partir da desconstrução do War Requiem de Benjamin Britten e do cruzamento entre notícias de jornais coloniais portugueses e jornais atuais suspensos em estendais sob tensão de colapso, o público intervém na escolha das paisagens sonoras e nas ações do intérprete.",
+        description: `
+          <p><strong>SOBRE A OBRA &amp; DISPOSITIVO INTERATIVO</strong><br>
+          <em>Let Me Sleep Now</em> constitui a terceira performance (apresentada como componente prática da defesa de Mestrado) do ciclo de performances em instalação desenvolvido no âmbito do Mestrado em Música no Departamento de Comunicação e Arte da Universidade de Aveiro, sob orientação do Prof. Doutor Paulo Maria Rodrigues.</p>
+
+          <p>A criação parte de uma desconstrução da obra <em>War Requiem</em>, de Benjamin Britten, articulada numa instalação que explora a coligação entre notícias de jornais coloniais portugueses do século XX (recolhidas no arquivo da Hemeroteca Municipal de Lisboa) e notícias de jornais atuais. As páginas de jornal encontram-se penduradas pelos fios que atravessam a sala, formando uma estrutura de estendais suspensos que exercem força contínua para baixo, mantendo no espaço a tensão iminente de nunca se saber quando irão colapsar.</p>
+
+          <p>À entrada da instalação encontrava-se um teclado com instruções para o público: os espectadores podiam digitar diferentes opções no teclado para selecionar e alterar em tempo real a paisagem sonora da instalação, decisão que transformava diretamente as ações físicas e musicais do intérprete (oboé e corpo) no espaço. A cada transição para uma nova paisagem sonora, o intérprete desfazia-se de uma das várias camadas de t-shirts que vestia, pendurando-a no estendal e tornando a estrutura progressivamente mais pesada até ao limite da sua rutura.</p>
+
+          <p><strong>PROCESSO &amp; EVOLUÇÃO (CICLO DE MESTRADO)</strong><br>
+          O trabalho emergiu das experimentações iniciadas na <em>Performance 2</em> do projeto de investigação (apresentada a 13 de abril de 2023 no Auditório do CCCI do DeCA-UA e trabalhada em residência laboratorial na Sala de Drama do DEP-UA em maio de 2023), onde se explorou o esgotamento do Modernismo, a luz vermelha de câmara escura/emergência, o sinal sonoro de <em>Imaginary Landscape No. 1</em> (John Cage), a obra <em>Rite de la Lune</em> (Edward Michaël) para oboé solo e o peso físico da memória histórica acumulada nos estendais.</p>
+
+          <p><strong>QUESTÕES DE INVESTIGAÇÃO (PRACTICE AS RESEARCH IN THE ARTS)</strong></p>
+          <ul>
+            <li>Como criar uma performance imersiva para o público e para o artista, rompendo com as convenções passivas do ritual concerto?</li>
+            <li>Quais as possibilidades de interação, agenciamento e diálogo entre intérprete, público e instalação?</li>
+            <li>De que forma o público se torna coautor e parte ativa da performance durante o processo?</li>
+          </ul>
+        `,
+        credits: `
+          <h4>Ficha Artística &amp; Académica</h4>
+          <p><strong>Conceção, Criação, Instalação Sonora e Performance (Oboé e Corpo):</strong> João Pedro Schwingel Carada</p>
+          <p><strong>Orientação Científica e Artística:</strong> Prof. Doutor Paulo Maria Rodrigues</p>
+          <p><strong>Referências Musicais Desconstruídas:</strong> Benjamin Britten (<em>War Requiem, Op. 66</em>), Edward Michaël (<em>Rite de la Lune</em>) e John Cage (<em>Imaginary Landscape No. 1</em>)</p>
+          <p><strong>Pesquisa Hemerográfica:</strong> Hemeroteca Municipal de Lisboa (periódicos coloniais e históricos portugueses) e imprensa contemporânea</p>
+          <p><strong>Instituição &amp; Locais:</strong> Departamento de Comunicação e Arte (DeCA) e Sala de Drama (DEP) — Universidade de Aveiro (2023)</p>
+          <br>
+          <h4>Dissertação de Mestrado (Repositório Institucional da UA)</h4>
+          <p>• <strong>Título:</strong> <em>“Performance em Instalação: possíveis diálogos entre intérprete, público e espaço”</em> (2023)</p>
+          <p>• <a href="http://hdl.handle.net/10773/39809" target="_blank" rel="noopener" style="text-decoration: underline;">Consultar Dissertação Completa na RIA — Universidade de Aveiro (PDF) ↗</a></p>
+        `,
+        videos: ["hmHkXOsvQzE", "pal0yvG5AHk"],
+        thumbnail: "img/Let%20me%20sleep%20now/letmesleepnow%20(10).jpg",
+        gallery: [
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(1).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(1.1).png",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(2).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(2.1).png",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(3).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(3.1).png",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(4).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(4.1).png",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(5).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(5).png",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(6).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(6).png",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(7).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(8).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(9).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(10).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(12).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(13).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(14).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(15).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(16).jpg",
+          "img/Let%20me%20sleep%20now/letmesleepnow%20(17).jpg"
+        ]
+      },
+      {
+        id: "onde-se-faz-o-espaco-uma-metamorfose",
+        title: "Onde Se Faz o Espaço: Uma Metamorfose",
+        subtitle: "Performance em Instalação Sonora & Participativa · Liquidâmbar / Mestrado em Música (UA)",
+        category: "Artes Visuais",
+        tags: ["Artes Visuais", "Performance", "Música"],
+        year: "2022",
+        inConstruction: false,
+        excerpt: "Primeira performance em instalação do ciclo de Mestrado, apresentada no Liquidâmbar (Coimbra) no evento Ex Aequo FM. Cruza as 'Six Metamorphoses after Ovid' de Benjamin Britten para oboé solo com uma cartografia sonora de Coimbra e uma instalação de estendais construída em tempo real pelos desenhos do público.",
+        description: `
+          <p><strong>SOBRE A PERFORMANCE EM INSTALAÇÃO</strong><br>
+          <em>Onde se faz o espaço: uma metamorfose</em> foi a primeira performance em instalação desenvolvida no âmbito do projeto de Mestrado em Música na Universidade de Aveiro, apresentada a <strong>19 de novembro de 2022</strong> no espaço <strong>Liquidâmbar</strong>, em Coimbra, integrando o evento <em>Ex Aequo FM</em> organizado pela <strong>Rede Ex Aequo</strong>.</p>
+
+          <p>A obra parte de <em>Six Metamorphoses after Ovid, Op. 49</em> (1951), para oboé solo, de Benjamin Britten — resgatando também a memória de um compositor cuja identidade queer foi historicamente silenciada —, colocando o sentido metamórfico da mitologia greco-romana em diálogo com uma paisagem sonora da cidade de Coimbra: um território que se transforma na vivência de quem nele imigra e o habita.</p>
+
+          <p><strong>CARTOGRAFIA SONORA DE COIMBRA &amp; AS SEIS METAMORFOSES</strong><br>
+          A instalação sonora foi construída através de recolhas de campo em diferentes lugares da cidade, distribuídas espacialmente em estéreo e interligadas pelo som de passos que guiam o ouvinte de um espaço mitológico a outro:</p>
+          <ul>
+            <li><strong>I. Pan:</strong> Jardim da Sereia (pássaros, vento nas copas das árvores, folhas e caminhar);</li>
+            <li><strong>II. Phaeton:</strong> Transportes públicos urbanos e trânsito da cidade;</li>
+            <li><strong>III. Niobe:</strong> Margem direita do Parque Verde do Mondego (bancos de pedra à beira-rio e ruídos de construção ao fundo);</li>
+            <li><strong>IV. Bacchus:</strong> Praça da República (circulação estudantil, vozes, bares e convívio);</li>
+            <li><strong>V. Narcissus:</strong> Espelhos de água e fontes do Jardim da Sereia e do Rio Mondego;</li>
+            <li><strong>VI. Arethusa:</strong> Cascata e fontes da entrada do Jardim da Sereia.</li>
+          </ul>
+
+          <p><strong>DISPOSITIVO PERFORMATIVO &amp; PARTICIPAÇÃO DO PÚBLICO</strong><br>
+          No início da performance, com a paisagem sonora já em curso, o intérprete senta-se em palco, tem o título da obra escrito no próprio corpo e é vendado por uma assistente. Cordas são amarradas em redor do seu corpo e estendidas até às cadeiras da plateia — inspiradas na teia de <em>Arachne</em> de Salvador Dalí —, formando estendais que unem fisicamente intérprete e espectadores.<br>
+          Enquanto o oboísta interpreta de memória e de olhos vendados as seis metamorfoses de Britten, o público é convidado a expressar visualmente (através de desenho, pintura ou escrita) o que sente na escuta e a pendurar as folhas com molas nos estendais. No final, os estendais e os desenhos criados pelo público permaneceram expostos numa sala com um código QR que permitia escutar o áudio da instalação.</p>
+        `,
+        credits: `
+          <h4>Ficha Artística &amp; Técnica</h4>
+          <p><strong>Conceção, Recolha e Instalação Sonora, Performance e Oboé Solo:</strong> João Pedro Schwingel Carada</p>
+          <p><strong>Obra Musical:</strong> Benjamin Britten — <em>Six Metamorphoses after Ovid, Op. 49</em> (1951)</p>
+          <p><strong>Orientação Científica (Mestrado em Música — UA):</strong> Prof. Doutor Paulo Maria Rodrigues</p>
+          <p><strong>Local &amp; Evento:</strong> Liquidâmbar (Coimbra) · Evento <em>Ex Aequo FM</em> (organização: Rede Ex Aequo)</p>
+          <p><strong>Data de Estreia:</strong> 19 de novembro de 2022</p>
+          <br>
+          <h4>Documentação Académica</h4>
+          <p>• <a href="http://hdl.handle.net/10773/39809" target="_blank" rel="noopener" style="text-decoration: underline;">Consultar Dissertação de Mestrado na RIA — Universidade de Aveiro (PDF) ↗</a></p>
+        `,
+        videos: [],
+        thumbnail: "img/Onde%20se%20faz%20o%20espa%C3%A7o/ondesefaz%20(2).jpg",
+        gallery: [
+          "img/Onde%20se%20faz%20o%20espa%C3%A7o/ondesefaz%20(2).jpg",
+          "img/Onde%20se%20faz%20o%20espa%C3%A7o/ondesefaz%20(1).jpg",
+          "img/Onde%20se%20faz%20o%20espa%C3%A7o/ondesefaz%20(3).webp"
+        ]
+      },
+      {
+        id: "de-onde-vem-cancoes-para-conversar-e-criar",
+        title: "De Onde Vem? Canções Para Conversar e Criar",
+        subtitle: "Projeto de Arte Comunitária · Orquestra Sem Fronteiras (Programa Terra a Terra)",
+        category: "Arte Comunitária",
+        tags: ["Arte Comunitária", "Música"],
+        year: "2022",
+        inConstruction: false,
+        thumbnail: "img/De%20onde%20vem/deondevem%20(2).jpg",
+        excerpt: "Projeto de arte colaborativa e cocriação musical a partir da canção popular, promovendo a formação musical e a expressão de jovens imigrantes em Castelo Branco, integrado na 2.ª edição do programa Terra a Terra da Orquestra Sem Fronteiras.",
+        description: `
+          <p><strong>SOBRE O PROJETO</strong><br>
+          <em>“De onde vem? Canções para Conversar e Criar”</em> é um projeto de arte colaborativa e cocriação musical que surge a partir da ideia da canção popular. Tem por objetivo promover a formação musical e intelectual de jovens imigrantes na região de Castelo Branco a partir de dinâmicas de grupo que exploram a expressão musical de forma descontraída através do corpo e da voz.</p>
+          <p>Assim, a música serve como ferramenta para a reafirmação de identidades e para perceber laços e pontos de contacto entre diferentes comunidades e culturas. As oficinas foram focadas na prática musical coletiva e na escuta mútua, decorrendo em encontros semanais com a comunidade do projeto <em>“Nós com os Outros”</em> (Amato Lusitano – Associação de Desenvolvimento), integrando participantes dos 6 aos 26 anos.</p>
+          <p>O projeto foi desenvolvido no âmbito da 2.ª edição do programa <strong>Terra a Terra</strong> da <strong>Orquestra Sem Fronteiras (OSF)</strong>, uma iniciativa com financiamento do Banco BPI e Fundação “la Caixa”.</p>
+        `,
+        credits: `
+          <h4>Ficha Técnica do Projeto</h4>
+          <p><strong>Conceção, Direção e Facilitação:</strong> João Pedro Schwingel Carada</p>
+          <p><strong>Parceria Comunitária:</strong> Projeto “Nós com os Outros” — Amato Lusitano (Associação de Desenvolvimento, Castelo Branco)</p>
+          <p><strong>Iniciativa &amp; Enquadramento:</strong> 2.ª edição do Programa Terra a Terra · Orquestra Sem Fronteiras (OSF)</p>
+          <p><strong>Financiamento:</strong> Banco BPI e Fundação “la Caixa”</p>
+          <p><strong>Fotografia (Galeria):</strong> Ana Brígida</p>
+          <br>
+          <h4>Registo Audiovisual &amp; Vídeo Institucional</h4>
+          <p>• <strong>Apresentação do Programa Terra a Terra:</strong> Stephanie Rowcliffe (Coordenadora de Projetos Sociais da OSF)</p>
+          <p>• <strong>Videografia:</strong> Adriana Romero</p>
+          <p>• <strong>Entidade:</strong> Orquestra Sem Fronteiras (<a href="https://osf.pt/" target="_blank" rel="noopener">osf.pt</a>)</p>
+        `,
+        videos: ["L0juAZvbQYo"],
+        thumbnail: "img/De%20onde%20vem/deondevem%20(13).jpg",
+        gallery: [
+          "img/De%20onde%20vem/deondevem%20(1).png",
+          "img/De%20onde%20vem/deondevem%20(2).jpg",
+          "img/De%20onde%20vem/deondevem%20(3).jpg",
+          "img/De%20onde%20vem/deondevem%20(4).jpg",
+          "img/De%20onde%20vem/deondevem%20(5).jpg",
+          "img/De%20onde%20vem/deondevem%20(6).jpg",
+          "img/De%20onde%20vem/deondevem%20(7).jpg",
+          "img/De%20onde%20vem/deondevem%20(8).jpg",
+          "img/De%20onde%20vem/deondevem%20(9).jpg",
+          "img/De%20onde%20vem/deondevem%20(10).jpg",
+          "img/De%20onde%20vem/deondevem%20(11).jpg",
+          "img/De%20onde%20vem/deondevem%20(12).jpg",
+          "img/De%20onde%20vem/deondevem%20(13).jpg",
+          "img/De%20onde%20vem/deondevem%20(14).jpg"
+        ]
+      },
+      {
+        id: "humano-em-metamorfose",
+        title: "Humano em Metamorfose",
+        subtitle: "Performance para Ensemble em Instalação · Estudos em Performance Musical (Universidade de Aveiro)",
+        category: "Performance",
+        tags: ["Performance", "Música", "Artes Visuais"],
+        year: "2022",
+        inConstruction: false,
+        thumbnail: "img/Humano%20em%20metamorfose/humano%20(1).jpeg",
+        excerpt: "Performance para ensemble instrumental (oboé, piano e guitarra) em instalação audiovisual e sonora. Toma como princípio a estética da antiguidade clássica e transforma mitos ovidianos à luz de Poiesis, Theoria e Praxis.",
+        description: `
+          <p><strong>SINOPSE</strong><br>
+          <em>Humano em Metamorfose</em> é uma performance para ensemble instrumental (oboé, piano e guitarra) em instalação. Toma como princípio a estética da antiguidade clássica e transforma mitos “ovidianos” à luz dos três pressupostos fundamentais da existência humana da filosofia grega: <em>Poiesis</em>, <em>Theoria</em> e <em>Praxis</em>.</p>
+
+          <p>Tirando partido da instalação sonora e audiovisual, que surge como plano de fundo de toda a narrativa, a obra desenrola-se em volta da evolução e progride lentamente desde a serenidade geométrica dos recursos artísticos greco-latinos até uma densidade desconcertante marcada pelo caos. Toda essa transformação acompanha a visão dos autores sobre esses três pressupostos fundamentais em Ovídio (<em>Metamorfoses</em>), que personificam cada momento da obra. Profundamente experimental, a criação vive da improvisação e do diálogo entre performers e instalação, resultando numa evolução da linguagem musical utilizada pelos intérpretes que, tal como o ser humano, se transforma lentamente até atingir o colapso na sua máxima complexidade.</p>
+
+          <p><strong>CONTEXTO ACADÉMICO &amp; ARTÍSTICO</strong><br>
+          Projeto artístico e trabalho de investigação desenvolvidos e apresentados em <strong>fevereiro de 2022</strong> no âmbito da unidade curricular de <strong>Estudos em Performance Musical</strong> do Mestrado em Música da Universidade de Aveiro (Departamento de Comunicação e Arte). A temática transversal do ciclo foi <em>“Metamorfose(s)”</em>, integrando também as apresentações dos projetos <em>“Metamorfose da Bella Ninfa”</em> e <em>“A Metamorfose de Siddhartha”</em>.</p>
+
+          <p><strong>ESTRUTURA DA OBRA (TRÊS MOVIMENTOS)</strong></p>
+          <ul>
+            <li><strong>I. Poiesis (A criação e o primeiro impulso humano):</strong> Inicia-se atrás do público com a entoação em latim dos versos 410 a 415 do Livro I das <em>Metamorfoses</em> de Ovídio sobre base rítmica dactílica e improviso vocal e instrumental em sol dórico. A instalação sonora parte do toque de sino (gravado no carrilhão) e de texturas de pedras recolhidas no campus, evocando o mito de <em>Deucalião e Pirra</em>.</li>
+            <li><strong>II. Theoria (A complexificação e o conhecimento):</strong> Improvisação em dó jónio dialogando com a instalação sonora inspirada no mito de <em>Aracne</em> e na gravura surrealista de Salvador Dalí (<em>Divine Comédie: Purgatoire 17</em>), combinando sons de tear (captados a partir de uma roda de bicicleta em movimento) e ressonâncias nas cordas do piano a partir de partitura gráfica.</li>
+            <li><strong>III. Praxis (A ação material, a densidade e o caos):</strong> Desconstrução progressiva de três fragmentos do repertório associado ao universo ovidiano — incluindo <em>Syrinx</em> (Claude Debussy) e <em>Six Metamorphoses after Ovid, Op. 49: VI. Arethusa</em> (Benjamin Britten) — sobrepostos à ressonância intensificada das cordas do piano e a ruídos urbanos, vozes e maquinarias até ao toque final do sino.</li>
+          </ul>
+        `,
+        credits: `
+          <h4>Ficha Artística &amp; Investigação</h4>
+          <p><strong>Conceção, Criação, Instalação Sonora e Trabalho Escrito:</strong> João Carada, José Teixeira e Pedro Silvestre</p>
+          <p><strong>Interpretação (Ensemble):</strong></p>
+          <p>• <strong>Oboé:</strong> João Carada</p>
+          <p>• <strong>Guitarra:</strong> José Teixeira</p>
+          <p>• <strong>Piano:</strong> Pedro Silvestre</p>
+          <p><strong>Unidade Curricular:</strong> Estudos em Performance Musical — Mestrado em Música</p>
+          <p><strong>Instituição &amp; Local:</strong> Auditório do Departamento de Comunicação e Arte (DeCA), Universidade de Aveiro</p>
+          <p><strong>Data:</strong> Fevereiro de 2022</p>
+          <br>
+          <h4>Registos Sonoros (SoundCloud)</h4>
+          <p>• <a href="https://on.soundcloud.com/Ob5gzsegURYhQxIWZB" target="_blank" rel="noopener" style="text-decoration: underline;">Ouvir Registo Áudio I (SoundCloud) ↗</a></p>
+          <p>• <a href="https://on.soundcloud.com/lWHySAY8e2Z9k12iwy" target="_blank" rel="noopener" style="text-decoration: underline;">Ouvir Registo Áudio II (SoundCloud) ↗</a></p>
+          <p>• <a href="https://on.soundcloud.com/yQ3ODpNEWJ4Y42qm8b" target="_blank" rel="noopener" style="text-decoration: underline;">Ouvir Registo Áudio III (SoundCloud) ↗</a></p>
+          <br>
+          <h4>Documentação &amp; Artigo Académico</h4>
+          <p>• <a href="https://drive.google.com/file/d/1n6lfFq8H472rf0m9vIXDgoEaMhsSIXus/view?usp=drive_link" target="_blank" rel="noopener" style="text-decoration: underline;">Ler Trabalho Escrito Completo (PDF) ↗</a></p>
+        `,
+        videos: [],
+        gallery: [
+          "img/Humano%20em%20metamorfose/humano%20(1).jpeg",
+          "img/Humano%20em%20metamorfose/humano%20(2).jpg",
+          "img/Humano%20em%20metamorfose/humano%20(3).jpg"
+        ]
+      },
+      {
+        id: "concertos",
+        title: "Concertos",
+        subtitle: "Performance Orquestral & Música de Câmara · Orquestra Sem Fronteiras (OSF)",
+        category: "Música",
+        tags: ["Música"],
+        year: "2020–2023",
+        inConstruction: false,
+        excerpt: "Participação como oboísta na Orquestra Sem Fronteiras (OSF) nos ciclos Concertos Sinfónicos de Verão (2023), Concertos Líricos (2021) e Concertos de Reis (2020), sob direção de Martim Sousa Tavares e Tiago Oliveira.",
+        description: `
+          <p>Registo da atividade enquanto oboísta na <strong>Orquestra Sem Fronteiras (OSF)</strong> ao longo de diversas temporadas e digressões pelo interior e centro do país, sob direção artística de Martim Sousa Tavares e direção musical de maestros convidados.</p>
+
+          <p><strong>1. CONCERTOS SINFÓNICOS DE VERÃO (JULHO DE 2023)</strong><br>
+          A Orquestra Sem Fronteiras concluiu a sua temporada 2022–2023 com dois concertos sinfónicos de verão realizados em julho de 2023: em <strong>Coimbra</strong>, no anfiteatro Colina de Camões (Quinta das Lágrimas) no âmbito do <em>Festival das Artes</em>, e na <strong>Bendada (Sabugal)</strong>, no encerramento do <em>Bendada Music Fest</em>. Martim Sousa Tavares apresenta os concertos e reflete sobre o trabalho de cartografia musical do território português.</p>
+
+          <p><strong>2. CONCERTOS LÍRICOS (OUTUBRO DE 2021)</strong><br>
+          Ciclo de concertos realizados em outubro de 2021 em <strong>Arganil</strong>, <strong>Figueira de Castelo Rodrigo</strong> e na <strong>Catedral de Idanha-a-Velha</strong>, sob direção musical do maestro convidado <strong>Tiago Oliveira</strong> e com a participação da soprano <strong>Inês Simões</strong>. O programa contemplou <em>A Welcome to Orkney</em> de Peter Maxwell Davies (em estreia nacional), obras de Ralph Vaughan Williams e os <em>Wesendonck Lieder</em> de Richard Wagner.</p>
+
+          <p><strong>3. CONCERTOS DE REIS (JANEIRO DE 2020)</strong><br>
+          Ciclo de concertos realizado nos dias 4 e 5 de janeiro de 2020 no <strong>Centro Cultural Raiano (Idanha-a-Nova)</strong>, no <strong>Fundão</strong> e na <strong>Covilhã</strong>, sob direção de <strong>Martim Sousa Tavares</strong>. Pensado como um programa de reflexão e renovação para o início do ano, incluiu obras como <em>The Unanswered Question</em> de Charles Ives, a Sinfonia n.º 49 (<em>La Passione</em>) de Joseph Haydn, a abertura de João de Sousa Carvalho e o Concerto para Clarinete de W. A. Mozart.</p>
+        `,
+        credits: `
+          <h4>Participação no Projeto</h4>
+          <p><strong>João Pedro Schwingel Carada:</strong> Oboísta (Orquestra Sem Fronteiras)</p>
+          <br>
+          <h4>Fichas Técnicas por Ciclo</h4>
+          <p><strong>• Concertos Sinfónicos de Verão (Julho 2023)</strong><br>
+          Direção Artística e Apresentação: Martim Sousa Tavares<br>
+          Locais: Coimbra (Festival das Artes / Quinta das Lágrimas) e Bendada, Sabugal (Bendada Music Fest)<br>
+          Videografia: Adriana Romero</p>
+          <br>
+          <p><strong>• Concertos Líricos &amp; Música de Câmara (Outubro 2021)</strong><br>
+          Direção Musical: Tiago Oliveira | Soprano: Inês Simões | Direção Artística: Martim Sousa Tavares<br>
+          Repertório em vídeo: Peter Maxwell Davies (<em>A Welcome to Orkney</em>), Ralph Vaughan Williams e Richard Wagner (<em>Wesendonck Lieder</em>)<br>
+          Locais: Catedral de Idanha-a-Velha, Arganil e Figueira de Castelo Rodrigo<br>
+          Videografia: Adriana Romero (câmara adicional: Enric Vives-Rubio)</p>
+          <br>
+          <p><strong>• Concertos de Reis (Janeiro 2020)</strong><br>
+          Direção Musical e Apresentação: Martim Sousa Tavares<br>
+          Locais: Centro Cultural Raiano (Idanha-a-Nova), Fundão e Covilhã (4 e 5 de janeiro de 2020)<br>
+          Videografia: Adriana Romero | Áudio: Daniel Santos e Ricardo Torres</p>
+          <br>
+          <p><strong>Entidade:</strong> Orquestra Sem Fronteiras (<a href="https://osf.pt/" target="_blank" rel="noopener" style="text-decoration: underline;">osf.pt</a>)</p>
+        `,
+        videos: [
+          "mFb5A79rV-E",
+          "WwPVr5bwz6Q",
+          "OrtVDmh8djQ",
+          "g4eNVMvwwPI",
+          "DtR3RtDw3eI",
+          "bGcyTRtydoM",
+          "gk9IMSdrAi8"
+        ],
+        thumbnail: "img/concertos.png",
+        gallery: [
+          "img/concertos.png"
+        ]
+      },
+      {
+        id: "oboe",
+        title: "Oboé",
+        subtitle: "Performance Musical & Interpretação Solista",
+        category: "Música",
+        tags: ["Música"],
+        year: "Arquivo",
+        inConstruction: false,
+        excerpt: "Registos audiovisuais dedicados ao repertório de oboé solo, música de câmara e performance musical contemporânea.",
+        description: `
+          <p>Seleção de registos em vídeo dedicados à prática e interpretação no oboé, abrangendo repertório solista, música de câmara e criação contemporânea.</p>
+        `,
+        credits: `
+          <h4>Repertório em Destaque</h4>
+          <p>• Edward Michaël — <em>Rite de la Lune (I e II)</em></p>
+          <p>• J. Orlando Alves — <em>Sonatina para Oboé e Piano</em></p>
+          <p>• Registos de Recital e Música de Câmara</p>
+        `,
+        videos: ["cpDPgfs6_N8", "h0BD7h9GfBY", "_HztjCh_Pno", "4_TekgToM2w", "wqbZG4g9BjI", "z0hbkBmMyA0", "dMZTNYD7nQg"],
+        thumbnail: "img/oboe.jpeg",
+        gallery: [
+          "img/oboe.jpeg"
+        ]
+      }
+    ];
+
+    function buildYouTubeEmbedHTML(videoId, title = "YouTube Video") {
+      const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0`;
+      const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
+      return `
+        <div>
+          <div class="video-frame-container">
+            <iframe
+              src="${embedUrl}"
+              title="${title}"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-fallback-bar">
+            <span>ID: ${videoId}</span>
+            <a href="${watchUrl}" target="_blank" rel="noopener">Assistir diretamente no YouTube ↗</a>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderPortfolio(filter = 'all') {
+      const grid = document.getElementById('portfolioGrid');
+      const filtered = filter === 'all'
+        ? projects
+        : projects.filter(p => p.category === filter || (p.tags && p.tags.includes(filter)));
+
+      grid.innerHTML = filtered.map((project, idx) => {
+        const num = String(idx + 1).padStart(2, '0');
+        return `
+          <article class="project-card" onclick="openProjectModal('${project.id}')">
+            <div class="card-meta-top">
+              <span>${num} / ${project.category}</span>
+              ${project.inConstruction
+                ? `<span class="badge-construction">Em Construção</span>`
+                : `<span>${project.year}</span>`
+              }
+            </div>
+            <div class="thumb-wrapper">
+              <img src="${project.thumbnail}" alt="${project.title}" loading="lazy">
+              ${project.inConstruction
+                ? `<div class="thumb-overlay-notice">Em Construção</div>`
+                : ''
+              }
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">${project.title}</h3>
+              <div class="card-subtitle">${project.subtitle}</div>
+              <p class="card-excerpt">${project.excerpt}</p>
+            </div>
+            <div class="card-footer">
+              <span>${project.inConstruction ? 'Ver Thumbnail & Nota' : 'Ver Ficha Completa'}</span>
+              <span>→</span>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function filterProjects(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-filter') === category);
+      });
+      renderPortfolio(category);
+      const section = document.getElementById('portfolio');
+      if (category !== 'all') {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function renderOboeSection() {
+      const grid = document.getElementById('oboeVideoGrid');
+      grid.innerHTML = oboeConcertVideos.map((v, i) => `
+        <div class="video-item">
+          <div class="card-meta-top">
+            <span>0${i + 1} / OBOÉ &amp; CONCERTOS</span>
+            <span>REGISTO AUDIOVISUAL</span>
+          </div>
+          <h3 class="card-title" style="font-size: 1.35rem;">${v.title}</h3>
+          <div class="card-subtitle">${v.subtitle}</div>
+          ${buildYouTubeEmbedHTML(v.id, v.title)}
+        </div>
+      `).join('');
+    }
+
+    function openProjectModal(projectId) {
+      const project = projects.find(p => p.id === projectId);
+      if (!project) return;
+
+      document.getElementById('modalCategory').textContent = `${project.category} — ${project.year}`;
+      document.getElementById('modalTitle').textContent = project.title;
+      document.getElementById('modalSubtitle').textContent = project.subtitle;
+
+      const notice = document.getElementById('modalConstructionNotice');
+      notice.style.display = project.inConstruction ? 'block' : 'none';
+
+      document.getElementById('modalDescription').innerHTML = project.description;
+      document.getElementById('modalCredits').innerHTML = project.credits;
+
+      const videosContainer = document.getElementById('modalVideos');
+      if (project.videos && project.videos.length > 0) {
+        videosContainer.style.display = 'flex';
+        videosContainer.innerHTML = `
+          <div class="modal-gallery-title">Registo Audiovisual do Projeto</div>
+          ${project.videos.map(vid => buildYouTubeEmbedHTML(vid, project.title)).join('')}
+        `;
+      } else {
+        videosContainer.style.display = 'none';
+        videosContainer.innerHTML = '';
+      }
+
+      const gallerySection = document.getElementById('modalGallerySection');
+      const galleryContainer = document.getElementById('modalGallery');
+      if (project.gallery && project.gallery.length > 0) {
+        gallerySection.style.display = 'block';
+        galleryContainer.innerHTML = project.gallery.map(imgUrl => `
+         <figure onclick="openLightbox('${imgUrl}')">
+           <img src="${imgUrl}" alt="${project.title}" loading="lazy">
+         </figure>
+       `).join('');
+      } else {
+        gallerySection.style.display = 'none';
+        galleryContainer.innerHTML = '';
+      }
+
+      const modal = document.getElementById('projectModal');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('projectModal');
+      modal.classList.remove('open');
+      document.getElementById('modalVideos').innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    function openLightbox(imgUrl) {
+      const lb = document.getElementById('imageLightbox');
+      const img = document.getElementById('lightboxImg');
+      img.src = imgUrl;
+      lb.style.display = 'flex';
+    }
+
+    function closeLightbox(e) {
+      const lb = document.getElementById('imageLightbox');
+      lb.style.display = 'none';
+      document.getElementById('lightboxImg').src = '';
+      if (e) e.stopPropagation();
+    }
+    function handleBackdropClick(e) {
+      if (e.target.id === 'projectModal') {
+        closeModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+   if (e.key === 'Escape') {
+     const lb = document.getElementById('imageLightbox');
+     if (lb && lb.style.display === 'flex') {
+       closeLightbox();
+     } else {
+       closeModal();
+     }
+   }
+ });
+
+    // INITIALIZE
+    renderPortfolio('all');
+    renderOboeSection();
+  </script>
+</body>
+</html>

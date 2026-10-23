@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — João Pedro Schwingel Carada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-screen: #E8E8E4;
+      --paper: #FFFFFF;
+      --ink: #141413;
+      --ink-secondary: #3E3E3B;
+      --ink-muted: #6E6E68;
+      --line: #D6D6D0;
+      --line-dark: #141413;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: var(--bg-screen);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      line-height: 1.48;
+      -webkit-font-smoothing: antialiased;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* PRINT BUTTON (SCREEN ONLY) */
+    .print-toolbar {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      z-index: 999;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .btn-print {
+      background: var(--ink);
+      color: #F9F9F8;
+      border: 1px solid var(--ink);
+      padding: 0.65rem 1.2rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transition: all 0.2s ease;
+    }
+
+    .btn-print:hover {
+      background: #F9F9F8;
+      color: var(--ink);
+    }
+
+    /* A4 SHEET DOCUMENT STYLE */
+    .a4-document {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 12mm auto;
+      padding: 16mm 18mm;
+      background: var(--paper);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    /* CV HEADER */
+    .cv-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+      padding-bottom: 1rem;
+      border-bottom: 1.5px solid var(--line-dark);
+      margin-bottom: 1.1rem;
+    }
+
+    .cv-header-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .cv-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+    }
+
+    .cv-name {
+      font-family: var(--font-serif);
+      font-size: 24pt;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .cv-meta-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.25rem;
+      margin-top: 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 7.5pt;
+      color: var(--ink-secondary);
+    }
+
+    .cv-photo {
+      width: 26mm;
+      height: 33mm;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: #f0f0ec;
+    }
+
+    .cv-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.06);
+    }
+
+    /* SECTIONS */
+    .cv-section {
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-top: 1px solid var(--line-dark);
+      border-bottom: 1px solid var(--line);
+      padding: 0.28rem 0;
+      margin-bottom: 0.65rem;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
+    .section-title-bar h2 {
+      font-family: var(--font-serif);
+      font-size: 13pt;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+    }
+
+    .section-title-bar span {
+      font-family: var(--font-mono);
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+    }
+
+    /* PROFILE */
+    .profile-text {
+      font-size: 9.2pt;
+      color: var(--ink-secondary);
+      line-height: 1.55;
+      text-align: justify;
+    }
+
+    /* SWISS EDITORIAL GRID ENTRIES */
+    .entry {
+      display: grid;
+      grid-template-columns: 38mm 1fr;
+      gap: 6mm;
+      padding: 0.45rem 0;
+      border-bottom: 0.5px solid var(--line);
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .entry:last-child {
+      border-bottom: none;
+    }
+
+    .entry-meta {
+      font-family: var(--font-mono);
+      font-size: 7.3pt;
+      line-height: 1.4;
+      color: var(--ink-muted);
+    }
+
+    .entry-meta .date {
+      color: var(--ink);
+      font-weight: 500;
+      display: block;
+    }
+
+    .entry-meta .loc {
+      display: block;
+      margin-top: 1px;
+    }
+
+    .entry-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .entry-title {
+      font-weight: 600;
+      font-size: 9.4pt;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .entry-org {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 10.2pt;
+      color: var(--ink-secondary);
+      line-height: 1.25;
+    }
+
+    .entry-desc {
+      font-size: 8.6pt;
+      color: var(--ink-secondary);
+      line-height: 1.45;
+      margin-top: 0.15rem;
+    }
+
+    .entry-list {
+      margin-top: 0.2rem;
+      padding-left: 1rem;
+      font-size: 8.5pt;
+      color: var(--ink-secondary);
+      line-height: 1.42;
+    }
+
+    .entry-list li {
+      margin-bottom: 0.12rem;
+    }
+
+    /* COMPACT GRID FOR ARTISTIC ACTIVITY AND PRESENTATIONS */
+    .compact-entry {
+      display: grid;
+      grid-template-columns: 38mm 1fr;
+      gap: 6mm;
+      padding: 0.3rem 0;
+      border-bottom: 0.5px solid var(--line);
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .compact-entry:last-child {
+      border-bottom: none;
+    }
+
+    .pub-item {
+      padding: 0.32rem 0;
+      border-bottom: 0.5px solid var(--line);
+      font-size: 8.4pt;
+      color: var(--ink-secondary);
+      line-height: 1.42;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .pub-item:last-child {
+      border-bottom: none;
+    }
+
+    .pub-link {
+      font-family: var(--font-mono);
+      font-size: 7pt;
+      color: var(--ink-muted);
+      word-break: break-all;
+    }
+
+    /* LANGUAGES */
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 0.5px solid var(--line);
+      border-left: 0.5px solid var(--line);
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .lang-cell {
+      border-right: 0.5px solid var(--line);
+      border-bottom: 0.5px solid var(--line);
+      padding: 0.45rem 0.6rem;
+    }
+
+    .lang-name {
+      font-weight: 600;
+      font-size: 8.8pt;
+      color: var(--ink);
+    }
+
+    .lang-level {
+      font-family: var(--font-mono);
+      font-size: 7.2pt;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+    }
+
+    /* NATIVE A4 PRINT CONFIGURATION */
+    @page {
+      size: A4 portrait;
+      margin: 14mm 16mm;
+    }
+
+    @media print {
+      html, body {
+        background: #FFFFFF;
+      }
+      .print-toolbar {
+        display: none !important;
+      }
+      .a4-document {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BUTTON TOOLBAR (HIDDEN ON PRINT) -->
+  <div class="print-toolbar">
+    <button class="btn-print" onclick="window.print()">Print / Save as PDF (A4)</button>
+  </div>
+
+  <!-- A4 DOCUMENT -->
+  <main class="a4-document">
+
+    <!-- HEADER -->
+    <header class="cv-header">
+      <div class="cv-header-main">
+        <span class="cv-eyebrow">Curriculum Vitae · Multidisciplinary Artist &amp; Researcher</span>
+        <h1 class="cv-name">João Pedro Schwingel Carada</h1>
+        <div class="cv-meta-grid">
+          <span>Coimbra, Portugal</span>
+          <span>+351 918 085 643</span>
+          <span><a href="mailto:joaopedroschw@gmail.com">joaopedroschw@gmail.com</a></span>
+          <span><a href="https://joaopedrocarada.com/">joaopedrocarada.com</a></span>
+        </div>
+      </div>
+      <div class="cv-photo">
+        <img src="img/imagem-whatsapp-2025-05-31-as-14.51.30_c663a35e.jpg" alt="João Pedro Schwingel Carada">
+      </div>
+    </header>
+
+    <!-- 01 / PROFILE -->
+    <section class="cv-section">
+      <div class="section-title-bar">
+        <h2>Profile</h2>
+        <span>01 / Biographical Summary</span>
+      </div>
+      <p class="profile-text">
+        PhD Candidate in Contemporary Art at the College of Arts of the University of Coimbra, researching body, space, and performance. He holds a Bachelor's degree in Music – Performance from the University of Évora and a Master's degree in Music – Performance from the University of Aveiro. He currently serves as President of the Administrative Board of the Students' Theatre of the University of Coimbra (TEUC). He has experience in cultural project management, practice-based artistic research, community art, cultural associations, and musical performance.
+      </p>
+    </section>
+
+    <!-- 02 / ACADEMIC EDUCATION -->
+    <section class="cv-section">
+      <div class="section-title-bar">
+        <h2>Academic Education</h2>
+        <span>02 / Academic Degrees</span>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">Oct 2023 — Present</span>
+          <span class="loc">Coimbra, PT</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">PhD in Contemporary Art</div>
+          <div class="entry-org">College of Arts, University of Coimbra</div>
+          <div class="entry-desc">
+            Research field: body, space, and performance.<br>
+            Supervisors: Dr. Susana Chiocca; Dr. João Oliveira Duarte.
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">Oct 2021 — Jul 2023</span>
+          <span class="loc">Aveiro, PT</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Master's in Music</div>
+          <div class="entry-org">Department of Communication and Art, University of Aveiro</div>
+          <div class="entry-desc">
+            Dissertation: <em>“Performance em Instalação: possíveis diálogos entre intérprete, público e espaço”</em> (Installation Performance: possible dialogues between performer, audience, and space) [<a href="http://hdl.handle.net/10773/39809" target="_blank">http://hdl.handle.net/10773/39809</a>]<br>
+            Supervisor: Dr. Paulo Maria Rodrigues.
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">Sep 2018 — Jul 2021</span>
+          <span class="loc">Évora, PT</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Bachelor's in Music — Performance Branch</div>
+          <div class="entry-org">School of Arts, University of Évora</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 / EXPERIENCE -->
+    <section class="cv-section">
+      <div class="section-title-bar">
+        <h2>Professional &amp; Institutional Experience</h2>
+        <span>03 / Management, Teaching &amp; Creation</span>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">Jan 2026 — Present</span>
+          <span class="loc">Coimbra, PT</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">President of the Administrative Board</div>
+          <div class="entry-org">Students' Theatre of the University of Coimbra (TEUC)</div>
+          <ul class="entry-list">
+            <li>Preparation, assembly, and submission of applications for public funding programs, managing processes with CCDR, PAAJ – IPDJ, and the Municipality of Coimbra;</li>
+            <li>Daily administrative management of the organization, encompassing institutional correspondence processing, resource management, and coordination of legal licensing requests with SPA (Portuguese Society of Authors);</li>
+            <li>Coordination of inter-institutional partnerships with leading cultural entities, namely Linha de Fuga and A Escola da Noite;</li>
+            <li>Comprehensive management of theatrical co-production processes, notably the play <em>“Perpétuo Paredes”</em> (in collaboration with CITAC) and the production <em>“Rubedo”</em> (in partnership with UMAR Coimbra);</li>
+            <li>Production direction and planning for the 2025/2026 TEUC Biennial Theatre Training Course, serving on the jury committee responsible for auditions;</li>
+            <li>Programming coordination and executive production for TEUC's Teatro de Bolso (covering performances such as Big Impere and rehearsals for Coimbra Impro and GEFAC), ensuring audience reservation management and front-of-house team coordination;</li>
+            <li>Logistical coordination and production of TEUC's final exercise, as well as managing its participation in the University Theatre Showcase (MTU 2026) at Teatro Académico de Gil Vicente (TAGV);</li>
+            <li>Technical and logistical resource management, responsible for requesting and booking lighting and sound materials and equipment for the organization's various activities;</li>
+            <li>Creation, setup, and technical operation of the sound design for the show <em>“Rubedo”</em> and for the performances of TEUC's final exercise.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">Dec 2025 — Present</span>
+          <span class="loc">Coimbra, PT</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">House Attendant / Front of House</div>
+          <div class="entry-org">Run &amp; Slide | Service Provider (Convento São Francisco)</div>
+          <ul class="entry-list">
+            <li>Responsible for welcoming, guiding, and checking tickets for audience members at cultural events and performances at Convento São Francisco;</li>
+            <li>Responsible for monitoring crowd flow, ensuring the safety and physical integrity of spectators in performance halls and common areas;</li>
+            <li>Provision of technical and informational support regarding programming, events, and historical spaces of the Convent, both to production teams and to the general public.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">Feb 2026</span>
+          <span class="loc">Coimbra, PT</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Performance Workshop Instructor</div>
+          <div class="entry-org">Students' Theatre of the University of Coimbra (TEUC)</div>
+          <ul class="entry-list">
+            <li>Pedagogical design and facilitation of an intensive artistic training laboratory, promoted in collaboration and co-creation with artist Maria Vitória do Valle;</li>
+            <li>Development and application of practice-based research methodologies, crossing frameworks from Leslie Hill and Helen Paris with original strategies for exploring the body, space, and the unconscious of movement;</li>
+            <li>Guidance in data collection and analysis in a creative context, implementing autoethnographic diaries for rigorous documentation and continuous evaluation of autobiographical artistic processes and drivers;</li>
+            <li>Facilitation of practical modules focused on musical expression, aimed at developing skills in co-creation dynamics and collaborative composition.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">Dec 2024 — Jan 2026</span>
+          <span class="loc">Coimbra, PT</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Chair of the General Assembly Board</div>
+          <div class="entry-org">Students' Theatre of the University of Coimbra (TEUC)</div>
+          <ul class="entry-list">
+            <li>Coordination and management of the institution's General Assemblies, ensuring the rigor of deliberative processes, information analysis, and the drafting and issuance of minutes and formal opinions;</li>
+            <li>Management, organization, and preservation of the institution's physical resources, with direct responsibility over the historical archive, costumes, and set pieces;</li>
+            <li>Executive production and sound design creation for the theatre production <em>“Pássaros Mortos Ainda Fazem Sombra”</em>;</li>
+            <li>Initiation of the inter-institutional management and co-production process for the play <em>“Perpétuo Paredes”</em>, in partnership with CITAC;</li>
+            <li>Development and maintenance of strategic partnerships with key cultural organizations in the city, consolidating institutional relations with the Linha de Fuga laboratory and the theatre company A Escola da Noite.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">2022 — Present</span>
+          <span class="loc">Coimbra, PT</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Proofreader and Translator</div>
+          <div class="entry-org">Independent Contractor</div>
+          <ul class="entry-list">
+            <li>Text proofreading and translation (EN/PT) of certificates and legal documents for Italian citizenship application processes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">2019 — 2023</span>
+          <span class="loc">Portugal</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Oboist &amp; Instructor</div>
+          <div class="entry-org">Service Provider</div>
+          <ul class="entry-list">
+            <li>Participation as a performer with Orquestra Sem Fronteiras in the concert cycles “Concertos Sinfónicos de Verão”, “Concertos de Fim de Ano”, “Concertos Líricos”, and “Concerto de Reis”;</li>
+            <li>Participation as an instrumentalist with the Orchestra of the Regional Conservatory of Baixo Alentejo in the “Christmas Concert”;</li>
+            <li>Oboe instructor at the 17th Beja Instrumentalists Course.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">Jan 2022 — Jul 2022</span>
+          <span class="loc">Idanha-a-Nova, PT</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Community Art Project Facilitator</div>
+          <div class="entry-org">Orquestra Sem Fronteiras | Service Provider</div>
+          <ul class="entry-list">
+            <li>Conception, execution, and management of the project <em>“De onde vem? Canções para Conversar e Criar”</em> for young immigrants;</li>
+            <li>Facilitation of pedagogical activities based on musical co-creation and bodily expression;</li>
+            <li>The project was part of the 2nd edition of the “Terra a Terra” program by Orquestra Sem Fronteiras, funded by BPI and the ”la Caixa” Foundation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">May 2017 — Oct 2017</span>
+          <span class="loc">Canoas, BR</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Undergraduate Research Fellow</div>
+          <div class="entry-org">Federal Institute of Education, Science and Technology of Rio Grande do Sul (IFRS)</div>
+          <ul class="entry-list">
+            <li>Project: <em>“Processo tradutório do literário: análise discursiva das relações de sentido na tradução”</em> (Literary translation process: discursive analysis of meaning relations in translation) (Supervisor: Dr. Gláucia da Silva Henge);</li>
+            <li>Research area: discourse analysis as a translation tool; Pêcheux's discourse analysis;</li>
+            <li>Investigation of different translations of Lewis Carroll's book <em>“Alice's Adventures in Wonderland”</em> and Edgar Allan Poe's short story <em>“The Black Cat”</em>;</li>
+            <li>Presentation of research findings at various academic seminars.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">Oct 2016 — Aug 2017</span>
+          <span class="loc">Canoas, BR</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Student Representative (Canoas Campus) on the Superior Council</div>
+          <div class="entry-org">Federal Institute of Education, Science and Technology of Rio Grande do Sul (IFRS)</div>
+          <ul class="entry-list">
+            <li>Advocacy for student interests in institutional policies, budgets, and curriculum.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">May 2016 — Aug 2016</span>
+          <span class="loc">Canoas, BR</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Outreach Fellow</div>
+          <div class="entry-org">Federal Institute of Education, Science and Technology of Rio Grande do Sul (IFRS)</div>
+          <ul class="entry-list">
+            <li>Program: <em>“Oficinas Permanentes de Cultura”</em> (Permanent Culture Workshops) (Supervisor: Dr. Gustavo Neuberger);</li>
+            <li>Support in managing the program's artistic workshops and assistance in organizing events and artistic interventions such as the Art Showcase at IFRS Canoas Campus and the School Showcase at underserved schools in the Canoas region;</li>
+            <li>Presentation of papers on the project at several academic seminars.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">Jul 2015 — Nov 2015</span>
+          <span class="loc">Canoas, BR</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Outreach Project Volunteer</div>
+          <div class="entry-org">Federal Institute of Education, Science and Technology of Rio Grande do Sul (IFRS)</div>
+          <ul class="entry-list">
+            <li>Project: <em>“Roda Leitura”</em> (Reading Circle) (Supervisor: Dr. Gláucia da Silva Henge);</li>
+            <li>Support in managing literary events on and off campus and research on “reading aloud” as a tool for public literary engagement.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">May 2015 — Nov 2015</span>
+          <span class="loc">Canoas, BR</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Outreach Fellow</div>
+          <div class="entry-org">Federal Institute of Education, Science and Technology of Rio Grande do Sul (IFRS)</div>
+          <ul class="entry-list">
+            <li>Project: <em>“Oficinas Permanentes de Cultura”</em> (Permanent Culture Workshops) (Supervisor: Dr. Gustavo Neuberger);</li>
+            <li>Teaching guitar and music theory within the “Music Workshop” project, supporting the management and coordination of the IFRS Band, and presenting papers at academic seminars.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">
+          <span class="date">Jun 2014 — Dec 2014</span>
+          <span class="loc">Canoas, BR</span>
+        </div>
+        <div class="entry-content">
+          <div class="entry-title">Teaching Assistant Fellow</div>
+          <div class="entry-org">Federal Institute of Education, Science and Technology of Rio Grande do Sul (IFRS)</div>
+          <ul class="entry-list">
+            <li>Served as Teaching Assistant for the Basic Electricity course, under the supervision of Dr. Joel Augusto Luft, providing weekly pedagogical and instructional support to students.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / ARTISTIC ACTIVITY -->
+    <section class="cv-section">
+      <div class="section-title-bar">
+        <h2>Artistic Activity</h2>
+        <span>04 / Performance, Theatre, Sound &amp; Music</span>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Jul 2026</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">World of Interiors</div>
+          <div class="entry-desc">Performer — Artistic residency and public presentation at Largo do Romal as part of N.I.B. – Núcleo de Imaginação da Baixa. Created by Ana Borralho &amp; João Galante.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">May 2026 — Sep 2026</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Coimbra, The Best City to Live and to Love</div>
+          <div class="entry-desc">Executive Production, Assistant Directing, Sound Design, and Sound Operation — TEUC Production (TEUC's Teatro de Bolso, TAGV / MTU, Bash Beer Urban Fest, and Inopinado Festival Street Parade). Directed by Hugo Inácio.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Apr 2026</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">SLOW</div>
+          <div class="entry-desc">Co-creation, Performance, Sound Art, and Sound Design — Presentation on the TAGV stage as part of the Abril Dança Coimbra Festival, by the Corpos Performáticos group (College of Arts – UC), supervised by Susana Chiocca.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Oct 2025</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Café com Leite</div>
+          <div class="entry-desc">Creation and Solo Performance — Presentation within the cycle <em>Corpos Performáticos — Acções Performativas</em> by the Performance Group of the College of Arts of the University of Coimbra (supervised by Susana Chiocca).</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Oct 2025 — Apr 2026</span><span class="loc">Coimbra, PT / Pontevedra, ES</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Perpétuo Paredes</div>
+          <div class="entry-desc">Actor / Performer — Theatrical co-production by CITAC, TEUC, Secção de Fado AAC, and DG/AAC (Convento São Francisco, TAGV / Orphika Cycle, TCSB, and XVII MITEU Pontevedra). Directed by Zé Paredes.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Jun 2025</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">O Não-Lugar Que Habito</div>
+          <div class="entry-desc">Guest Artist / Co-creation — Performative experience at the exhibition “Coração Pequenininho”, Teatro Académico de Gil Vicente (TAGV).</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">May 2025</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Pássaros Mortos Ainda Fazem Sombra</div>
+          <div class="entry-desc">Actor / Sound Design — TEUC Production. Directed by Vicente Baptista, collective creation dramaturgy.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Aug 2024 — Mar 2025</span><span class="loc">Coimbra, PT / Santiponce, ES</span></div>
+        <div class="entry-content">
+          <div class="entry-title">O Banquete de Platão</div>
+          <div class="entry-desc">Actor — Production by Associação Cultural Thíasos. Directed by Maria Vitória do Valle.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Oct 2024</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Suplício dos Doces</div>
+          <div class="entry-desc">Actor — Production by Associação Cultural Thíasos. Directed by Maria Vitória do Valle.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Sep 2024 — Oct 2024</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Com Que Linhas Te Cruzas? Parte 1 – À Espera</div>
+          <div class="entry-desc">Community Actor — Production by O Teatrão (Oficina Municipal de Teatro) / Metro Mondego. Directed by Marco Antonio Rodrigues.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">May 2024</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Antiarte em Movimento: Experimentos Performativos em Ruas de Coimbra</div>
+          <div class="entry-desc">Artist in Residence — Artistic residency at Casa da Esquina and public presentation at the Anozero Biennale (Ágora). Coordinated by Íris Faria.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">2024</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Resistência: O Nosso Poema É Um Tríptico</div>
+          <div class="entry-desc">Actor — TEUC Production. Directed by Maria Quintelas.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Mar 2024</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Saudade É Ser Depois de Ter</div>
+          <div class="entry-desc">Artist in Residence — Artistic residency and exhibition at Casa da Esquina. Coordinated by Íris Faria.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Jun 2022</span><span class="loc">Aveiro, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Humano em Metamorfose</div>
+          <div class="entry-desc">Performer / Concept — Performance at the Auditorium of the Department of Communication and Art of the University of Aveiro.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Nov 2019</span><span class="loc">Évora, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Six Metamorphoses after Ovid for Solo Oboe, Op. 49, by Benjamin Britten</div>
+          <div class="entry-desc">Oboe Performer — Performance at the Fernando Namora and Comparative Literature Conference, University of Évora.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">Oct 2019</span><span class="loc">Évora, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">“Évora Gloriosa” (1929) Soundscape</div>
+          <div class="entry-desc">Oboe Performer — Soundscape Performance at the II Historical Soundscape Meeting, University of Évora.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / COURSES & SUPPLEMENTARY TRAINING -->
+    <section class="cv-section">
+      <div class="section-title-bar">
+        <h2>Courses &amp; Supplementary Training</h2>
+        <span>05 / Laboratories &amp; Residencies</span>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta"><span class="date">Mar 2026 — Nov 2026</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Corpo | Território Training Program (96h)</div>
+          <div class="entry-org">Linha de Fuga</div>
+          <div class="entry-desc">Workshops: <em>Escutar/Escrever/Arquivar</em> (Listening/Writing/Archiving), Tiago Cadete; <em>Em nome da escuridão, da magia e da vulnerabilidade</em> (In the name of darkness, magic, and vulnerability), Michela Depetris; <em>Práticas entre o corpo sónico e voz</em> (Practices between the sonic body and voice), Gio Lourenço; <em>Dramaturgia – Serviço de Encantamento</em> (Dramaturgy – Enchantment Service), Ana Rocha; <em>Laboratório Processos e Criação</em> (Processes and Creation Laboratory), Miguel Bonneville; <em>Dançar com o corpo inteiro</em> (Dancing with the whole body), Luís Guerra; <em>Performando o (in)visível – práticas site-specific no espaço urbano</em> (Performing the (in)visible – site-specific practices in urban space), Gustavo Ciríaco; <em>Uma cartografia das danças da vida</em> (A cartography of the dances of life), Natália Mendonça.</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta"><span class="date">Feb 2026 — May 2026</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Lighting and Sound Engineering Course 2025/2026 (50h)</div>
+          <div class="entry-org">Students' Theatre of the University of Coimbra (TEUC)</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta"><span class="date">Nov 2025</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Accompaniment Practices (15h)</div>
+          <div class="entry-org">Linha de Fuga</div>
+          <div class="entry-desc">Workshop aimed at artists with an ongoing creation process, focused on reflecting upon practices and the importance of accompanying one's own creative processes. Coordinated by Carolina Campos.</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta"><span class="date">Oct 2023 — Apr 2024</span><span class="loc">Coimbra, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Biennial Theatre Training Course 2023/2024 (423h)</div>
+          <div class="entry-org">Students' Theatre of the University of Coimbra (TEUC)</div>
+          <div class="entry-desc">Workshops: Body and Movement (40h); Acting (40h); Improvisation (40h); Gesture Theatre (40h); Performance (40h); Vocal Training (40h); Butoh (40h). Final production: <em>“Resistência – O Nosso Poema é um Tríptico”</em>.</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta"><span class="date">May 2022</span><span class="loc">Aveiro, PT</span></div>
+        <div class="entry-content">
+          <div class="entry-title">REACT Training School (40h)</div>
+          <div class="entry-org">Department of Communication and Art, University of Aveiro</div>
+          <div class="entry-desc">Training course in musical performance as artistic practice in a research context through <em>Artistic Research-Based Learning (AR-BL)</em>.</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta"><span class="date">Aug 2020 — Dec 2020</span><span class="loc">João Pessoa, BR</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Physiology of the Musician — Module 1 (24h)</div>
+          <div class="entry-org">Federal University of Paraíba (UFPB)</div>
+          <div class="entry-desc">Body awareness, mental and semi-mental training, learning stages, Nonviolent Communication, and preparation for musical performance.</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta"><span class="date">Apr 2020 — Jun 2020</span><span class="loc">Santo André, BR</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Introduction to the Neuroscience of Music (24h)</div>
+          <div class="entry-org">Federal University of ABC (UFABC)</div>
+          <div class="entry-desc">Cognitive neuroscience, fundamentals of scientific research, neural and psychological correlates of music, and socio-cognitive and emotional aspects.</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta"><span class="date">Jan 2016 &amp; Jan 2017</span><span class="loc">Pelotas, BR</span></div>
+        <div class="entry-content">
+          <div class="entry-title">6th and 7th SESC International Music Festival — Concert Music Oboe (88h + 88h)</div>
+          <div class="entry-org">SESC Pelotas</div>
+          <div class="entry-desc">Oboe classes with Viktoria Tatour (OSPA) and Christoph Hartmann (Berlin Philharmonic). Ensemble practice with the Festival Symphonic Band.</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta"><span class="date">Feb 2016 &amp; Feb 2017</span><span class="loc">Gramado, BR</span></div>
+        <div class="entry-content">
+          <div class="entry-title">II and III Gramado in Concert — Oboe Course (52h + 42h)</div>
+          <div class="entry-org">Gramado in Concert</div>
+          <div class="entry-desc">Oboe classes with Peter Apps (OSESP) and Javier Balbinder (OSPA). Ensemble practice with the Festival Symphony Orchestra.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / PUBLISHED CONFERENCE ABSTRACTS -->
+    <section class="cv-section">
+      <div class="section-title-bar">
+        <h2>Published Conference Abstracts</h2>
+        <span>06 / Scientific Publications</span>
+      </div>
+
+      <div class="pub-item">
+        <strong>Schwingel Carada, J. P.</strong>, &amp; Henge, G. da S. (2017). Ideia vai ideia vem: o movimento dos sentidos no processo tradutório do literário [Conference abstract]. In <em>ENPEX 2017 – Salão de Ensino, Pesquisa e Extensão</em>, (7). IFRS Campus Canoas. <span class="pub-link">https://enpex.canoas.ifrs.edu.br/enpex/article/view/514</span>
+      </div>
+
+      <div class="pub-item">
+        <strong>Schwingel Carada, J. P.</strong>, &amp; Henge, G. da S. (2017). Sentidos em movimento: análise discursiva do processo tradutório do conto The Black Cat [Conference abstract]. In <em>SICT Res.</em>, 6. Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Sul. <span class="pub-link">https://eventos.ifrs.edu.br/index.php/Salao/SICT2017/schedConf/presentations</span>
+      </div>
+
+      <div class="pub-item">
+        <strong>Schwingel Carada, J. P.</strong>, &amp; Henge, G. da S. (2017). Uma palavra pela outra? Exercício analítico sobre o conto The Black Cat [Conference abstract]. In <em>18.ª Mostra de Pesquisa, Ensino e Extensão do IFRS – Câmpus Porto Alegre</em>. <span class="pub-link">https://eventos.ifrs.edu.br/index.php/MostraPoA/MostraPoA2017/schedConf/presentations</span>
+      </div>
+
+      <div class="pub-item">
+        <strong>Carada, J. P.</strong>, &amp; Neuberger, G. (2016). Oficinas Permanentes de Cultura: a cultura construtora de cidadãos [Conference abstract]. In <em>34.º SEURS – Cidadania, Democracia e Movimentos Sociais, Anais Apresentações Orais</em>, 1613–1618. Instituto Federal Catarinense.
+      </div>
+
+      <div class="pub-item">
+        <strong>Carada, J. P.</strong>, Santos, L., &amp; Neuberger, G. (2016). Oficinas permanentes de cultura: a extensão através do ensino [Conference abstract]. In <em>Salão de Ensino, Pesquisa e Extensão</em>, (6). IFRS Campus Canoas. <span class="pub-link">https://enpex.canoas.ifrs.edu.br/enpex/article/view/246</span>
+      </div>
+
+      <div class="pub-item">
+        Nogueira, J., <strong>Carada, J.</strong>, &amp; Henge, G. (2016). Roda Leitura: o compartilhamento incentivando o ato de ler [Conference abstract]. In <em>Salão de Ensino, Pesquisa e Extensão</em>, (6). IFRS Campus Canoas. <span class="pub-link">https://enpex.canoas.ifrs.edu.br/enpex/article/view/245</span>
+      </div>
+    </section>
+
+    <!-- 07 / PAPER PRESENTATIONS -->
+    <section class="cv-section">
+      <div class="section-title-bar">
+        <h2>Paper Presentations</h2>
+        <span>07 / Conference Communications</span>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">2017</span><span class="loc">Porto Alegre, BR</span></div>
+        <div class="entry-content">
+          <div class="entry-title">18th MOSTRAPOA — IFRS Porto Alegre Campus</div>
+          <div class="entry-desc">Paper presented: <em>“Uma palavra pela outra? Exercício analítico sobre o conto The Black Cat”</em>.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">2017</span><span class="loc">Bento Gonçalves, BR</span></div>
+        <div class="entry-content">
+          <div class="entry-title">2nd IFRS Teaching, Research and Outreach Showcase</div>
+          <div class="entry-desc">Paper presented: <em>“Sentidos em movimento: análise discursiva do processo tradutório do conto The Black Cat”</em>.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">2017</span><span class="loc">Canoas, BR</span></div>
+        <div class="entry-content">
+          <div class="entry-title">ENPEX 2017 &amp; V IFCITEC — IFRS Canoas Campus</div>
+          <div class="entry-desc">Papers presented: <em>“Ideia vai ideia vem: o movimento dos sentidos no processo tradutório do literário”</em> and <em>“Quadrúpede Controlado por Joystick de 2 Eixos”</em>.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">2016</span><span class="loc">Camboriú, BR</span></div>
+        <div class="entry-content">
+          <div class="entry-title">34th Southern Region University Outreach Seminar (SEURS) — IFC</div>
+          <div class="entry-desc">Paper presented: <em>“Oficinas Permanentes de Cultura: a cultura construtora de cidadãos”</em>.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">2016</span><span class="loc">RS, Brazil</span></div>
+        <div class="entry-content">
+          <div class="entry-title">1st IFRS Research, Outreach and Teaching Showcase / 6th MoEPEx Osório / 17th MostraPoA</div>
+          <div class="entry-desc">Presentations: <em>“Oficinas Permanentes de Cultura: a extensão através do ensino”</em>, <em>“Oficinas Permanentes de Cultura: a cultura construtora de cidadãos”</em>, and <em>“Projeto Roda Leitura: a extensão incentivando o ato de ler”</em>.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">2015</span><span class="loc">Porto Alegre / Osório, BR</span></div>
+        <div class="entry-content">
+          <div class="entry-title">16th MostraPoA &amp; 5th MoEPEx Osório Campus — IFRS</div>
+          <div class="entry-desc">Presentations: <em>“Projeto Oficinas Permanentes de Cultura: ampliando as concepções artísticas e culturais da comunidade do IFRS Campus Canoas”</em>, <em>“Projeto Oficinas Permanentes de Cultura – Música”</em>, and <em>“Roda Leitura: compartilhar e experienciar leituras”</em>.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 / AWARDS & HONORS -->
+    <section class="cv-section">
+      <div class="section-title-bar">
+        <h2>Awards &amp; Honors</h2>
+        <span>08 / Academic Recognition</span>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">2017</span><span class="loc">Bento Gonçalves, BR</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Outstanding Paper Award at the 6th Scientific and Technological Initiation Seminar (Linguistics, Literature, and Arts)</div>
+          <div class="entry-desc">Federal Institute of Rio Grande do Sul (2nd Teaching, Research and Outreach Showcase) — Awarded paper: <em>“Sentidos em movimento: análise discursiva do processo tradutório do conto The Black Cat”</em>.</div>
+        </div>
+      </div>
+
+      <div class="compact-entry">
+        <div class="entry-meta"><span class="date">2015</span><span class="loc">Porto Alegre, BR</span></div>
+        <div class="entry-content">
+          <div class="entry-title">Outstanding Presentation Award at the 16th MOSTRAPOA</div>
+          <div class="entry-desc">Federal Institute of Rio Grande do Sul (Porto Alegre Campus) — Awarded presentation (poster): <em>“Projeto Oficinas Permanentes de Cultura: ampliando as concepções artísticas e culturais da comunidade do IFRS – Campus Canoas”</em>.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 / LANGUAGES -->
+    <section class="cv-section" style="margin-bottom: 0;">
+      <div class="section-title-bar">
+        <h2>Languages</h2>
+        <span>09 / Language Proficiency</span>
+      </div>
+
+      <div class="lang-grid">
+        <div class="lang-cell">
+          <div class="lang-name">Portuguese</div>
+          <div class="lang-level">Native</div>
+        </div>
+        <div class="lang-cell">
+          <div class="lang-name">English</div>
+          <div class="lang-level">Advanced (C1)</div>
+        </div>
+        <div class="lang-cell">
+          <div class="lang-name">Spanish</div>
+          <div class="lang-level">Basic (A2)</div>
+        </div>
+        <div class="lang-cell">
+          <div class="lang-name">French</div>
+          <div class="lang-level">Beginner (A1)</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
